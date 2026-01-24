@@ -1,31 +1,16 @@
 'use client';
+
 import React, { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
-import { ChevronRight, Play } from 'lucide-react';
+import { Play } from 'lucide-react';
 
-// Mock data
-const services = [
-  {
-    title: "Documentary Production",
-    description: "Authentic stories that drive social change and inspire action through compelling visual narratives."
-  },
-  {
-    title: "Commercial Films",
-    description: "Brand stories that resonate with audiences and create lasting emotional connections."
-  },
-  {
-    title: "Educational Content",
-    description: "Engaging educational materials that inform, inspire, and empower communities."
-  }
-];
+import Container from '@/components/layout/Container';
+import PartnersSection from '@/components/ui/PartnersSection';
+import ServiceCard from '@/components/ui/ServiceCard';
+import Section from '@/components/ui/Section';
+import Button from '@/components/ui/Button';
 
-const portfolio = [
-  { title: "Voices of Change", category: "Documentary", thumbnail: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&h=600&fit=crop" },
-  { title: "Community Stories", category: "Social Impact", thumbnail: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&h=600&fit=crop" },
-  { title: "Future Leaders", category: "Educational", thumbnail: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=600&fit=crop" },
-  { title: "Urban Narratives", category: "Documentary", thumbnail: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&h=600&fit=crop" },
-  { title: "Heritage Project", category: "Cultural", thumbnail: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=600&fit=crop" },
-];
+import { services } from '@/data/services';
+import { portfolio } from '@/data/portfolio';
 
 const heroImages = [
   "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=1600&h=900&fit=crop",
@@ -33,25 +18,7 @@ const heroImages = [
   "https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?w=1600&h=900&fit=crop"
 ];
 
-function Button({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <a
-      href={href}
-      className="inline-flex items-center gap-2 bg-gold text-black px-8 py-4 text-sm font-medium hover:bg-opacity-90 transition-all duration-300 group"
-    >
-      {children}
-      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-    </a>
-  );
-}
 
-function Container({ children }: { children: React.ReactNode }) {
-  return <div className="max-w-7xl mx-auto px-6">{children}</div>;
-}
-
-function Section({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <section className={`py-20 ${className}`}>{children}</section>;
-}
 
 // Intersection Observer Hook
 function useInView(options = {}): [React.RefObject<HTMLDivElement>, boolean] {
@@ -168,36 +135,39 @@ export default function CantoneFimsLanding() {
 
       {/* SERVICES SECTION */}
       <Section className="bg-cream">
-        <Container>
-          <div
-            ref={servicesRef}
-            className={`transition-all duration-1000 ${
-              servicesInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-brown">Our Services</h2>
-            <div className="w-20 h-1 bg-gold mb-12" />
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {services.map((service, idx) => (
-                <div
-                  key={service.title}
-                  className={`group border-2 border-brown/20 p-8 hover:border-gold transition-all duration-500 hover:shadow-xl hover:-translate-y-2 bg-white/50 ${
-                    servicesInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                  }`}
-                  style={{ transitionDelay: `${idx * 0.1}s` }}
-                >
-                  <div className="w-12 h-12 bg-gold/20 mb-4 group-hover:bg-gold transition-colors duration-300" />
-                  <h3 className="font-semibold text-xl mb-3 text-navy">{service.title}</h3>
-                  <p className="text-brown/80 leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+      <Container>
+        <div
+          ref={servicesRef}
+          className={`transition-all duration-1000 ${
+            servicesInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          {/* Section Header */}
+          <div className="mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-brown">
+              Our Services
+            </h2>
+            <div className="w-20 h-1 bg-gold mb-3" />
+            <p className="text-brown/70 max-w-2xl">
+              We offer comprehensive video production services tailored to bring your story to life with creativity and impact.
+            </p>
           </div>
-        </Container>
-      </Section>
+
+          {/* Service Cards Grid */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((service, idx) => (
+              <ServiceCard
+                key={service.title}
+                title={service.title}
+                description={service.description}
+                index={idx}
+                isInView={servicesInView}
+              />
+            ))}
+          </div>
+        </div>
+      </Container>
+    </Section>
 
       {/* PORTFOLIO SECTION */}
       <Section className="bg-white/30">
@@ -247,6 +217,9 @@ export default function CantoneFimsLanding() {
           </div>
         </Container>
       </Section>
+
+      {/* PARTNERS SECTION - ADD HERE */}
+      <PartnersSection />
 
       {/* CTA SECTION */}
       <Section className="bg-cream">

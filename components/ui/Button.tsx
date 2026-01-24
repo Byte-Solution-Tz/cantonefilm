@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { ChevronRight } from 'lucide-react';
+
 
 export default function Button({
   href,
@@ -10,9 +12,10 @@ export default function Button({
   return (
     <Link
       href={href}
-      className="inline-block bg-gold text-black px-6 py-3 text-sm font-medium hover:opacity-90 transition"
+      className="inline-flex items-center gap-2 bg-gold text-black px-8 py-4 text-sm font-medium hover:bg-opacity-90 transition-all duration-300 group"
     >
       {children}
+      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
     </Link>
   );
 }

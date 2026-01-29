@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import Preloader from '@/components/ui/Preloader';
+
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -23,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} font-sans bg-cream text-black`}>
+        <Preloader />
         <Header />
         <main>{children}</main>
         <Footer />

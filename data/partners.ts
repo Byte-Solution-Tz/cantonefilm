@@ -7,32 +7,32 @@ export interface Partner {
 export const partners: Partner[] = [
   {
     name: "UNESCO",
-    logo: "/images/partners/unesco.svg",
+    logo: "/img/partners/uniceflogo.png",
     url: "https://unesco.org"
   },
   {
     name: "UNICEF",
-    logo: "/images/partners/unicef.svg",
+    logo: "/img/partners/uniceflogo.png",
     url: "https://unicef.org"
   },
   {
     name: "Red Cross",
-    logo: "/images/partners/redcross.svg",
+    logo: "/img/partners/uniceflogo.png",
     url: "https://redcross.org"
   },
   {
     name: "World Bank",
-    logo: "/images/partners/worldbank.svg",
+    logo: "/img/partners/uniceflogo.png",
     url: "https://worldbank.org"
   },
   {
     name: "WHO",
-    logo: "/images/partners/who.svg",
+    logo: "/img/partners/uniceflogo.png",
     url: "https://who.int"
   },
   {
     name: "Save the Children",
-    logo: "/images/partners/savechildren.svg",
+    logo: "/img/partners/uniceflogo.png",
     url: "https://savethechildren.org"
   }
 ];

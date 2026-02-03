@@ -4,6 +4,7 @@ export const portfolio: PortfolioItem[] = [
   {
     title: 'Voices of Change',
     slug: 'voices-of-change',
+    image: '/img/portfolio/voices-of-change.jpg',
     category: 'Documentary',
     coverImage: '/img/portfolio/commercial-docu.png',
     excerpt:
@@ -15,6 +16,7 @@ export const portfolio: PortfolioItem[] = [
   {
     title: 'Future of Learning',
     slug: 'future-of-learning',
+    image: '/img/portfolio/future-of-learning.jpg',
     category: 'Impact Stories',
     coverImage: '/img/portfolio/future-of-learning.jpg',
     excerpt:
@@ -25,6 +27,7 @@ export const portfolio: PortfolioItem[] = [
   {
     title: 'Brand Horizons',
     slug: 'brand-horizons',
+    image: '/img/portfolio/brand-horizons.jpg',
     category: 'Cooperate Videos',
     coverImage: '/img/portfolio/brand-horizons.jpg',
     excerpt:
@@ -35,6 +38,7 @@ export const portfolio: PortfolioItem[] = [
   {
     title: 'Community Impact Summit',
     slug: 'community-impact-summit',
+    image: '/img/portfolio/community-impact-summit.jpg',
     category: 'Cooperate Videos',
     coverImage: '/img/portfolio/commercial-docu.png',
     excerpt:

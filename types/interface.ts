@@ -25,6 +25,7 @@ export type PortfolioCategory =
 export type PortfolioItem = {
   title: string;
   slug: string;
+  image: string;
 
   category: PortfolioCategory;
 

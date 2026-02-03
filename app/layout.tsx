@@ -1,15 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Preloader from '@/components/ui/Preloader';
-
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-});
 
 export const metadata: Metadata = {
   title: "Cantone Films | Creating Stories That Last",
@@ -24,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} font-sans bg-cream text-black`}>
+      <body className="font-sans bg-cream text-black">
         <Preloader />
         <Header />
         <main>{children}</main>

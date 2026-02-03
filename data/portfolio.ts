@@ -1,28 +1,48 @@
-export const portfolio = [
-  { 
-    title: "Voices of Change", 
-    category: "Documentary", 
-    image: "/img/documentary-banner.png" 
-},
-  { 
-    title: "Community Stories", 
-    category: "Social Impact", 
-    image: "/img/commercial-docu.png" 
-},
-  { 
-    title: "Future Leaders", 
-    category: "Educational", 
-    image: "/img/documentary-banner.png" 
-},
-  { 
-    title: "Urban Narratives", 
-    category: "Documentary", 
-    image: "/img/documentary-banner.png" 
-},
-  { 
-    title: "Heritage Project", 
-    category: "Cultural", 
-    image: "/img/documentary-banner.png" 
-},
+import type { PortfolioItem } from '@/types/interface';
 
+export const portfolio: PortfolioItem[] = [
+  {
+    title: 'Voices of Change',
+    slug: 'voices-of-change',
+    image: '/img/portfolio/voices-of-change.jpg',
+    category: 'Documentary',
+    coverImage: '/img/portfolio/commercial-docu.png',
+    excerpt:
+      'A powerful documentary amplifying grassroots voices and community-led impact.',
+    vimeoId: '912345678',
+    featured: true,
+  },
+
+  {
+    title: 'Future of Learning',
+    slug: 'future-of-learning',
+    image: '/img/portfolio/future-of-learning.jpg',
+    category: 'Impact Stories',
+    coverImage: '/img/portfolio/future-of-learning.jpg',
+    excerpt:
+      'An educational film series transforming complex topics into accessible stories.',
+    vimeoId: '923456789',
+  },
+
+  {
+    title: 'Brand Horizons',
+    slug: 'brand-horizons',
+    image: '/img/portfolio/brand-horizons.jpg',
+    category: 'Cooperate Videos',
+    coverImage: '/img/portfolio/brand-horizons.jpg',
+    excerpt:
+      'A cinematic commercial campaign crafted to elevate brand storytelling.',
+    vimeoId: '934567890',
+  },
+
+  {
+    title: 'Community Impact Summit',
+    slug: 'community-impact-summit',
+    image: '/img/portfolio/community-impact-summit.jpg',
+    category: 'Cooperate Videos',
+    coverImage: '/img/portfolio/commercial-docu.png',
+    excerpt:
+      'Event coverage capturing moments of collaboration, dialogue, and action.',
+    externalLink: 'https://vimeo.com/945678901',
+  },
 ];

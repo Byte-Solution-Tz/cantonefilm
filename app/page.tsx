@@ -12,7 +12,6 @@ export default function HomePage() {
       <ServicesSection />
       <PortfolioSection />
       <WhyChooseUsSection />
-      <PartnersSection />
       <CTASection />
     </>
   );

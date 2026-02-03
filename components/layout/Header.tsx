@@ -1,7 +1,9 @@
 'use client';
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Film } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import ContactModal from "../modals/ContactModal";
+import ContactButton from "../ui/ContactButton";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -15,6 +17,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("/");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,12 +30,12 @@ export default function Header() {
 
   // Close mobile menu when clicking outside
   useEffect(() => {
-    if (isMobileMenuOpen) {
+    if (isMobileMenuOpen || isModalOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
     }
-  }, [isMobileMenuOpen]);
+  }, [isMobileMenuOpen, isModalOpen]);
 
   return (
     <header
@@ -87,16 +90,14 @@ export default function Header() {
           ))}
           
           {/* CTA Button */}
-          <Link
-            href="/contact"
+          <ContactButton
             className={`px-6 py-2.5 text-sm font-medium transition-all duration-300 border-2 ${
               isScrolled
                 ? "bg-gold text-navy border-gold hover:bg-transparent hover:text-gold"
                 : "bg-transparent text-cream border-cream hover:bg-cream hover:text-navy"
             }`}
-          >
-            Let&apos;s Talk
-          </Link>
+            onClick={() => setIsModalOpen(true)}
+          />
         </nav>
 
         {/* Mobile Menu Button */}
@@ -146,22 +147,24 @@ export default function Header() {
           ))}
           
           {/* Mobile CTA */}
-          <Link
-            href="/contact"
-            onClick={() => setIsMobileMenuOpen(false)}
+          <ContactButton
             className={`mt-4 px-8 py-4 bg-gold text-navy text-lg font-medium hover:bg-gold/90 transition-all duration-300 transform ${
               isMobileMenuOpen
                 ? "translate-y-0 opacity-100"
                 : "translate-y-4 opacity-0"
             }`}
-            style={{
-              transitionDelay: isMobileMenuOpen ? `${navItems.length * 50}ms` : "0ms",
+            onClick={() => {
+              setIsMobileMenuOpen(false);
+              setIsModalOpen(true);
             }}
-          >
-            Let&apos;s Talk
-          </Link>
+            label="Let's Talk"
+          />
         </nav>
       </div>
+      <ContactModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </header>
   );
 }

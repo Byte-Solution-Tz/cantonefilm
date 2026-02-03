@@ -15,3 +15,29 @@ export type ServiceSplitProps = {
   index: number;
   reverse?: boolean;
 };
+
+export type PortfolioCategory =
+  | 'Documentary'
+  | 'Cooperate Videos'
+  | 'Impact Stories'
+  | 'Fictional Films';
+
+export type PortfolioItem = {
+  title: string;
+  slug: string;
+
+  category: PortfolioCategory;
+
+  coverImage: string;
+
+  excerpt: string;
+
+  /** Vimeo video ID (for modal + hero video) */
+  vimeoId?: string;
+
+  /** Optional external campaign link */
+  externalLink?: string;
+
+  /** Marks item as featured */
+  featured?: boolean;
+};

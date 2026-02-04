@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import ContactModal from "../modals/ContactModal";
 import ContactButton from "../ui/ContactButton";
+import Button from "../ui/Button";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -94,17 +95,19 @@ export default function Header() {
         </nav>
 
         {/* Mobile Menu Button */}
-        <button
+        <Button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2 transition-colors duration-300 text-navy hover:text-gold focus-visible:outline-gold"
-          aria-label="Toggle menu"
+          variant="ghost"
+          size="icon"
+          className="md:hidden h-10 w-10 text-navy hover:text-gold"
+          ariaLabel="Toggle menu"
         >
           {isMobileMenuOpen ? (
             <X className="w-6 h-6" />
           ) : (
             <Menu className="w-6 h-6" />
           )}
-        </button>
+        </Button>
       </div>
 
       {/* Mobile Menu */}

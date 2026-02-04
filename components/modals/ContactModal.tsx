@@ -118,13 +118,15 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
       >
         {/* Header */}
         <div className="sticky top-0 bg-gradient-to-br from-navy to-brown p-6 md:p-8 z-10">
-          <button
+          <Button
             onClick={onClose}
-            className="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-cream hover:bg-cream/10 transition-colors duration-300 group"
-            aria-label="Close modal"
+            variant="ghost"
+            size="icon"
+            className="absolute top-6 right-6 h-10 w-10 text-cream hover:bg-cream/10"
+            ariaLabel="Close modal"
           >
             <X className="w-6 h-6 group-hover:rotate-90 transition-transform duration-300" />
-          </button>
+          </Button>
 
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-4">

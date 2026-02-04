@@ -2,6 +2,7 @@
 
 import { site } from '@/data/site';
 import Link from 'next/link';
+import Button from '@/components/ui/Button';
 import {
   Mail,
   Phone,
@@ -148,13 +149,15 @@ export default function Footer() {
           </span>
 
           
-          <button
+          <Button
             onClick={scrollToTop}
-            className="w-11 h-11 flex items-center justify-center border border-cream/30 hover:border-gold hover:text-gold transition"
-            aria-label="Scroll to top"
+            variant="ghost"
+            size="icon"
+            className="h-11 w-11 border border-cream/30 text-cream hover:border-gold hover:text-gold"
+            ariaLabel="Scroll to top"
           >
             <ArrowUp className="w-4 h-4" />
-          </button>
+          </Button>
         </div>
       </div>
 

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/layout/Container';
 import Section from '@/components/ui/Section';
+import Button from '@/components/ui/Button';
 import { portfolio } from '@/data/portfolio';
 import { PortfolioCategory } from '@/types/interface';
 import { Play, ExternalLink, Filter } from 'lucide-react';
@@ -68,17 +69,15 @@ export default function PortfolioPageClient() {
             <div className="flex gap-3 mb-12 overflow-x-auto">
               <Filter className="w-5 h-5 text-brown shrink-0" />
               {categories.map(cat => (
-                <button
+                <Button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-6 py-3 border-2 text-sm font-medium transition-all ${
-                    activeCategory === cat
-                      ? 'bg-gold text-navy border-gold'
-                      : 'border-brown/20 text-brown hover:border-gold hover:text-gold'
-                  }`}
+                  variant={activeCategory === cat ? 'primary' : 'outline'}
+                  size="sm"
+                  className={activeCategory === cat ? '' : 'border-brown/20 text-brown hover:border-gold hover:text-gold hover:bg-transparent'}
                 >
                   {cat}
-                </button>
+                </Button>
               ))}
             </div>
 

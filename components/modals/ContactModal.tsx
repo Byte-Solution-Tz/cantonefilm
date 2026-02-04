@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Send, User, Mail, Phone, MessageSquare, Building, FileText } from 'lucide-react';
+import Button from '@/components/ui/Button';
 
 type ContactModalProps = {
   isOpen: boolean;
@@ -69,7 +70,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
@@ -277,10 +278,12 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           {/* Submit Button */}
           {submitStatus !== 'success' && (
             <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
-              <button
+              <Button
                 onClick={handleSubmit}
                 disabled={isSubmitting}
-                className="w-full sm:w-auto group flex items-center justify-center gap-3 bg-gold text-navy px-8 py-4 font-bold text-lg hover:bg-gold/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105"
+                variant="primary"
+                size="lg"
+                className="w-full sm:w-auto font-bold hover:scale-105"
               >
                 {isSubmitting ? (
                   <>
@@ -293,7 +296,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </>
                 )}
-              </button>
+              </Button>
 
               <p className="text-brown/60 text-sm">
                 * Required fields

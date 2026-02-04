@@ -90,21 +90,28 @@ export default function CTASection() {
                   }`}
                   style={{ transitionDelay: '0.5s' }}
                 >
-                  <a
+                  <Button
                     href="/contact"
-                    className="inline-flex items-center justify-center gap-3 bg-gold text-navy px-8 py-4 text-lg font-medium hover:bg-gold/90 transition-all duration-300 group hover:scale-105"
+                    variant="primary"
+                    size="lg"
+                    className="hover:scale-105"
+                    rightIcon={
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                    }
                   >
                     Start Your Project
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
-                  </a>
+                  </Button>
 
-                  <a
+                  <Button
                     href="/portfolio"
-                    className="inline-flex items-center justify-center gap-3 bg-transparent border-2 border-cream text-cream px-8 py-4 text-lg font-medium hover:bg-cream hover:text-navy transition-all duration-300 group"
+                    variant="outline-light"
+                    size="lg"
+                    rightIcon={
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                    }
                   >
                     View Our Work
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
-                  </a>
+                  </Button>
                 </div>
 
                 {/* Contact methods - Quick access */}

@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import { useInView } from '@/hooks/useInView';
+import { ArrowRight } from 'lucide-react';
 import type { ServiceSplitProps } from '@/types/interface';
 
 /* ---------------- Parallax Hook ---------------- */
@@ -140,7 +141,14 @@ export default function ServiceSplit({
               ))}
             </ul>
 
-            <Button href={cta.href}>{cta.label}</Button>
+            <Button
+              href={cta.href}
+              rightIcon={
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+              }
+            >
+              {cta.label}
+            </Button>
           </div>
         </div>
       </div>

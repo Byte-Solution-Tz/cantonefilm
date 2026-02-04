@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/layout/Container';
 import Section from '@/components/ui/Section';
+import Button from '@/components/ui/Button';
 import { portfolio } from '@/data/portfolio';
 import {
   Play,
@@ -115,30 +116,36 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
 
             <div className="flex flex-wrap gap-4">
               {project.vimeoId && (
-                <button
+                <Button
                   onClick={() => setShowVideo(true)}
-                  className="flex items-center gap-3 bg-gold text-navy px-8 py-4 font-semibold hover:bg-gold/90 transition"
+                  variant="primary"
+                  size="md"
+                  leftIcon={<Play className="w-5 h-5 fill-navy" />}
                 >
-                  <Play className="w-5 h-5 fill-navy" />
                   Watch Film
-                </button>
+                </Button>
               )}
 
               {project.externalLink && (
-                <a
+                <Button
                   href={project.externalLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 border-2 border-cream text-cream px-8 py-4 font-semibold hover:bg-cream hover:text-navy transition"
+                  variant="outline-light"
+                  size="md"
+                  leftIcon={<ExternalLink className="w-5 h-5" />}
                 >
-                  <ExternalLink className="w-5 h-5" />
                   View Campaign
-                </a>
+                </Button>
               )}
 
-              <button className="border-2 border-cream text-cream px-6 py-4 hover:bg-cream/10 transition">
+              <Button
+                variant="outline-light"
+                size="icon"
+                ariaLabel="Share project"
+              >
                 <Share2 className="w-5 h-5" />
-              </button>
+              </Button>
             </div>
           </div>
         </Container>
@@ -236,13 +243,15 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
                 <p className="text-cream/80 mb-6">
                   Let’s bring your vision to life.
                 </p>
-                <Link
+                <Button
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-gold text-navy px-6 py-3 font-medium w-full"
+                  variant="primary"
+                  size="md"
+                  fullWidth
+                  rightIcon={<ArrowRight className="w-4 h-4" />}
                 >
                   Get In Touch
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+                </Button>
               </div>
             </div>
           </div>

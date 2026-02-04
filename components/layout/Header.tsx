@@ -87,11 +87,8 @@ export default function Header() {
           
           {/* CTA Button */}
           <ContactButton
-            className={`px-6 py-2.5 text-sm font-medium transition-all duration-300 border-2 ${
-              isScrolled
-                ? "bg-gold text-navy border-gold hover:bg-transparent hover:text-gold"
-                : "bg-navy text-cream border-navy hover:bg-transparent hover:text-navy"
-            }`}
+            variant="primary"
+            size="sm"
             onClick={() => setIsModalOpen(true)}
           />
         </nav>
@@ -142,7 +139,10 @@ export default function Header() {
           
           {/* Mobile CTA */}
           <ContactButton
-            className={`mt-4 px-8 py-4 bg-gold text-navy text-lg font-medium hover:bg-gold/90 transition-all duration-300 transform ${
+            variant="primary"
+            size="lg"
+            fullWidth
+            className={`mt-4 transition-all duration-300 transform ${
               isMobileMenuOpen
                 ? "translate-y-0 opacity-100"
                 : "translate-y-4 opacity-0"

@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 import Container from '@/components/layout/Container';
+import Button from '@/components/ui/Button';
 import { useInView } from '@/hooks/useInView';
 
 export default function CantoneFilmsHero() {
@@ -93,13 +94,16 @@ export default function CantoneFilmsHero() {
                 className="hidden md:block animate-slideUp"
                 style={{ animationDelay: '0.5s' }}
               >
-                <a
+                <Button
                   href="#contact"
-                  className="inline-flex items-center gap-3 bg-transparent border-2 border-radius-5 rounded-xl border-navy text-navy px-8 py-4 text-lg font-medium hover:bg-navy hover:text-cream transition-all duration-300 group"
+                  variant="outline"
+                  size="lg"
+                  rightIcon={
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                  }
                 >
                   Let&apos;s Collaborate
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
-                </a>
+                </Button>
               </div>
             </div>
           </div>
@@ -128,13 +132,17 @@ export default function CantoneFilmsHero() {
 
           {/* Mobile CTA */}
           <div className="md:hidden mt-8 animate-slideUp">
-            <a
+            <Button
               href="#contact"
-              className="inline-flex items-center gap-3 bg-gold text-navy px-6 py-3 text-base font-medium hover:bg-gold/90 transition-all duration-300 group w-full justify-center"
+              variant="primary"
+              size="md"
+              fullWidth
+              rightIcon={
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
+              }
             >
               Let's Collaborate
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
-            </a>
+            </Button>
           </div>
         </div>
       </Container>

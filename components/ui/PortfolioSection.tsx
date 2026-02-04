@@ -5,7 +5,7 @@ import Container from '@/components/layout/Container';
 import Button from '@/components/ui/Button';
 import { portfolio } from '@/data/portfolio';
 import { useInView } from '@/hooks/useInView';
-import { Play, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, Play, ArrowUpRight } from 'lucide-react';
 
 export default function PortfolioSection() {
   const [sectionRef, inView] = useInView({ threshold: 0.15 });
@@ -62,7 +62,14 @@ export default function PortfolioSection() {
                 <Stat value="15+" label="Countries" />
               </div> */}
 
-              <Button href="/portfolio">View All Works</Button>
+              <Button
+                href="/portfolio"
+                rightIcon={
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                }
+              >
+                View All Works
+              </Button>
 
               <p className="text-xs text-brown/60 italic">
                 Hover a project to explore

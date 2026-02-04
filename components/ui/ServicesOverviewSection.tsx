@@ -23,7 +23,7 @@ export default function ServicesOverviewSection() {
   const [gridRef, gridInView] = useInView({ threshold: 0.1 });
 
   return (
-    <Section className="bg-cream py-24 md:py-32 relative overflow-hidden">
+    <Section id="services" className="bg-cream py-24 md:py-32 relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl -translate-x-48 -translate-y-48" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-brown/5 rounded-full blur-3xl translate-x-48 translate-y-48" />

@@ -7,17 +7,16 @@ import ContactButton from "../ui/ContactButton";
 import Button from "../ui/Button";
 
 const navItems = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "Contact", href: "/contact" },
+  { label: "Home", href: "/#home", id: "home" },
+  { label: "About", href: "/#about", id: "about" },
+  { label: "Services", href: "/#services", id: "services" },
+  { label: "Portfolio", href: "/#portfolio", id: "portfolio" },
 ];
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("/");
+  const [activeLink, setActiveLink] = useState("home");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
@@ -27,6 +26,37 @@ export default function Header() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sectionIds = navItems.map((item) => item.id);
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => Boolean(section));
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntries = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visibleEntries.length > 0) {
+          const id = visibleEntries[0].target.getAttribute("id");
+          if (id) setActiveLink(id);
+        }
+      },
+      {
+        root: null,
+        rootMargin: "0px 0px -40% 0px",
+        threshold: [0.1, 0.25, 0.5, 0.75],
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
   }, []);
 
   // Close mobile menu when clicking outside
@@ -74,13 +104,15 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              onClick={() => setActiveLink(item.href)}
-              className="relative text-sm font-medium transition-colors duration-300 group text-navy hover:text-gold"
+              onClick={() => setActiveLink(item.id)}
+              className={`relative text-sm font-medium transition-colors duration-300 group ${
+                activeLink === item.id ? "text-gold" : "text-navy hover:text-gold"
+              }`}
             >
               {item.label}
               <span
                 className={`absolute -bottom-1 left-0 h-0.5 bg-gold transition-all duration-300 ${
-                  activeLink === item.href ? "w-full" : "w-0 group-hover:w-full"
+                  activeLink === item.id ? "w-full" : "w-0 group-hover:w-full"
                 }`}
               />
             </Link>
@@ -138,14 +170,14 @@ export default function Header() {
               key={item.href}
               href={item.href}
               onClick={() => {
-                setActiveLink(item.href);
+                setActiveLink(item.id);
                 setIsMobileMenuOpen(false);
               }}
-              className={`text-2xl font-semibold text-cream hover:text-gold transition-all duration-300 transform ${
+              className={`text-2xl font-semibold transition-all duration-300 transform ${
                 isMobileMenuOpen
                   ? "translate-y-0 opacity-100"
                   : "translate-y-4 opacity-0"
-              }`}
+              } ${activeLink === item.id ? "text-gold" : "text-cream hover:text-gold"}`}
               style={{
                 transitionDelay: isMobileMenuOpen ? `${idx * 50}ms` : "0ms",
               }}

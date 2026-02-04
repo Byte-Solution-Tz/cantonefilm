@@ -23,6 +23,7 @@ export default function CantoneFilmsHero() {
 
   return (
     <section
+      id="home"
       ref={heroRef}
       className="relative h-screen overflow-hidden bg-cream"
     >

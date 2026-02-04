@@ -12,7 +12,7 @@ export default function AboutUsSection() {
   const [contentRef, contentInView] = useInView({ threshold: 0.2 });
 
   return (
-    <Section className="bg-cream py-24 md:py-32 relative overflow-hidden">
+    <Section id="about" className="bg-cream py-24 md:py-32 relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-brown/5 rounded-full blur-3xl" />

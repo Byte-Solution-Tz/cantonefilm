@@ -2,47 +2,61 @@ import type { PortfolioItem } from '@/types/interface';
 
 export const portfolio: PortfolioItem[] = [
   {
-    title: 'Voices of Change',
-    slug: 'voices-of-change',
-    image: '/img/portfolio/voices-of-change.jpg',
+    title: 'Asia–Africa BlueTech Superhighway (AABS)',
+    slug: 'aabs-bluetech-superhighway',
     category: 'Documentary',
-    coverImage: '/img/portfolio/commercial-docu.png',
+    coverImage: '/img/portfolio/aabs-cover.jpg',
     excerpt:
-      'A powerful documentary amplifying grassroots voices and community-led impact.',
-    vimeoId: '912345678',
+      'A multi-country documentary video series highlighting how AABS is strengthening small-scale fisheries and aquaculture systems across Africa and Asia.',
     featured: true,
+
+    description:
+      'This project documents the early progress of the Asia–Africa BlueTech Superhighway (AABS) across five countries in Africa and Asia, led by WorldFish. Through a series of country-focused videos, the project highlights how small-scale fishing and aquaculture communities are being supported through improved data systems, climate-smart technologies, value addition, and inclusive fisheries management.',
+
+    goal:
+      'To showcase how AABS is strengthening aquatic food systems across diverse contexts by improving productivity, resilience, and gender-inclusive participation within small-scale fisheries and aquaculture.',
+
+    approach:
+      'We adopted a documentary-style approach, working closely with WorldFish and in-country partners to capture real activities, voices, and experiences on the ground. Interviews, field footage, and contextual visuals were combined to translate complex research and development initiatives into clear, accessible stories.',
+
+    results:
+      'The project delivered a coordinated series of five country-level videos that now serve as communication and knowledge-sharing tools for partners, donors, and wider audiences.',
+
+    links: [
+      { label: 'Bangladesh', url: '#' },
+      { label: 'Nigeria', url: '#' },
+      { label: 'Tanzania', url: '#' },
+      { label: 'Kenya', url: '#' },
+      { label: 'Mozambique', url: '#' },
+    ],
   },
 
   {
-    title: 'Future of Learning',
-    slug: 'future-of-learning',
-    image: '/img/portfolio/future-of-learning.jpg',
+    title: 'Tenda Teachers',
+    slug: 'tenda-teachers',
     category: 'Impact Stories',
-    coverImage: '/img/portfolio/future-of-learning.jpg',
+    coverImage: '/img/portfolio/tenda-teachers-cover.jpg',
     excerpt:
-      'An educational film series transforming complex topics into accessible stories.',
-    vimeoId: '923456789',
-  },
+      'A documentary highlighting how the Tenda Teachers program is strengthening teaching practices in Tanzanian primary schools.',
+    vimeoId: 'XXXXXXXXX',
 
-  {
-    title: 'Brand Horizons',
-    slug: 'brand-horizons',
-    image: '/img/portfolio/brand-horizons.jpg',
-    category: 'Cooperate Videos',
-    coverImage: '/img/portfolio/brand-horizons.jpg',
-    excerpt:
-      'A cinematic commercial campaign crafted to elevate brand storytelling.',
-    vimeoId: '934567890',
-  },
+    description:
+      'This project was commissioned by Project Zawadi to document the Tenda Teachers program, which supports primary school teachers in Tanzania to adopt improved teaching techniques through demonstration videos and targeted training.',
 
-  {
-    title: 'Community Impact Summit',
-    slug: 'community-impact-summit',
-    image: '/img/portfolio/community-impact-summit.jpg',
-    category: 'Cooperate Videos',
-    coverImage: '/img/portfolio/commercial-docu.png',
-    excerpt:
-      'Event coverage capturing moments of collaboration, dialogue, and action.',
-    externalLink: 'https://vimeo.com/945678901',
+    goal:
+      'To showcase how the Tenda Teachers program strengthens teaching practices and improves learning outcomes for pupils in primary schools.',
+
+    approach:
+      'Using a documentary-style approach, we captured classroom demonstrations, training sessions, and teacher perspectives. The focus was on real classroom experiences to clearly communicate the program’s methods and impact.',
+
+    results:
+      'The final video serves as a concise communication and advocacy tool for partners and donors supporting education initiatives in Tanzania.',
+
+    links: [
+      {
+        label: 'Watch Video',
+        url: '#',
+      },
+    ],
   },
 ];

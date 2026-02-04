@@ -19,7 +19,7 @@ export default function PortfolioPageClient() {
   const [gridRef, gridInView] = useInView({ threshold: 0.15 });
 
   const categories = useMemo<(PortfolioCategory | 'All')[]>(() => {
-    const unique = Array.from(new Set(portfolio.map(p => p.category)));
+    const unique = Array.from(new Set(portfolio.map(p => p.category))) as PortfolioCategory[];
     return ['All', ...unique];
   }, []);
 

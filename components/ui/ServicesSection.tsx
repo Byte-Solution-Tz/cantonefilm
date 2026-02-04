@@ -16,13 +16,13 @@ export default function ServicesSection() {
         <Container>
           <div
             ref={headerRef}
-            className={`text-center max-w-4xl mx-auto transition-all duration-1000 ${
+            className={`text-left max-w-4xl transition-all duration-1000 ${
               headerInView
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-10'
             }`}
           >
-            <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="flex items-center justify-start gap-4 mb-6">
               <div className="w-12 h-0.5 bg-gold" />
               <span className="text-gold tracking-widest text-sm uppercase">
                 What We Offer

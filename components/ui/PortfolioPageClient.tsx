@@ -35,11 +35,11 @@ export default function PortfolioPageClient() {
         <Container>
           <div
             ref={headerRef}
-            className={`text-center max-w-4xl mx-auto transition-all duration-1000 ${
+            className={`text-left max-w-4xl transition-all duration-1000 ${
               headerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            <div className="flex justify-center items-center gap-3 mb-6">
+            <div className="flex justify-start items-center gap-3 mb-6">
               <span className="w-12 h-px bg-gold" />
               <span className="text-gold tracking-widest text-sm uppercase">
                 Our Work
@@ -53,7 +53,7 @@ export default function PortfolioPageClient() {
               <span className="text-brown">Inspire Change</span>
             </h1>
 
-            <p className="text-xl text-brown/80 max-w-3xl mx-auto">
+            <p className="text-xl text-brown/80 max-w-3xl">
               A curated selection of visual stories crafted for impact,
               education, and global audiences.
             </p>

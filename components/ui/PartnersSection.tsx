@@ -23,8 +23,8 @@ export default function PartnersSection() {
           }`}
         >
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="flex items-center justify-center gap-4 mb-6">
+          <div className="text-left max-w-3xl mb-16">
+            <div className="flex items-center justify-start gap-4 mb-6">
               <span className="w-10 h-px bg-gold" />
               <span className="text-gold text-xs tracking-widest uppercase font-medium">
                 Trusted By

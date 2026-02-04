@@ -46,11 +46,11 @@ export default function Header() {
           : "bg-cream/95 backdrop-blur-md border-b border-brown/10"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 md:py-4 flex justify-between items-center">
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2 text-xl md:text-2xl font-bold group"
+          className="flex items-center gap-2 text-2xl md:text-2xl font-bold group"
           onClick={() => setActiveLink("/")}
         >
           <div className="relative">
@@ -99,26 +99,40 @@ export default function Header() {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           variant="ghost"
           size="icon"
-          className="md:hidden h-10 w-10 text-navy hover:text-gold"
+          className="md:hidden h-11 w-11 text-navy border border-brown/20 bg-cream/80 hover:text-gold hover:border-gold"
           ariaLabel="Toggle menu"
         >
           {isMobileMenuOpen ? (
-            <X className="w-6 h-6" />
+            <X className="w-7 h-7" />
           ) : (
-            <Menu className="w-6 h-6" />
+            <Menu className="w-7 h-7" />
           )}
         </Button>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed inset-0 top-18.25 bg-navy/98 backdrop-blur-lg transition-all duration-500 ${
+        className={`md:hidden fixed inset-0 z-50 bg-navy bg-opacity-95 backdrop-blur-lg transition-all duration-500 ${
           isMobileMenuOpen
             ? "opacity-100 visible"
             : "opacity-0 invisible"
         }`}
       >
-        <nav className="flex flex-col items-center justify-center h-full gap-8 px-6">
+        <div className="absolute top-4 right-4">
+          <Button
+            onClick={() => setIsMobileMenuOpen(false)}
+            variant="ghost"
+            size="icon"
+            className="h-11 w-11 text-cream border border-cream/20 hover:border-gold hover:text-gold"
+            ariaLabel="Close menu"
+          >
+            <X className="w-7 h-7" />
+          </Button>
+        </div>
+
+        <nav className="relative flex flex-col items-center justify-start h-full gap-7 px-6 pt-24 pb-10 overflow-y-auto">
+          <div className="absolute inset-x-4 top-20 bottom-6 rounded-3xl bg-cream/5 border border-cream/10 backdrop-blur-sm" />
+          <div className="relative w-full max-w-sm mx-auto flex flex-col items-center gap-7 py-8">
           {navItems.map((item, idx) => (
             <Link
               key={item.href}
@@ -143,7 +157,7 @@ export default function Header() {
           {/* Mobile CTA */}
           <ContactButton
             variant="primary"
-            size="lg"
+            size="md"
             fullWidth
             className={`mt-4 transition-all duration-300 transform ${
               isMobileMenuOpen
@@ -156,6 +170,7 @@ export default function Header() {
             }}
             label="Let's Talk"
           />
+          </div>
         </nav>
       </div>
       <ContactModal 

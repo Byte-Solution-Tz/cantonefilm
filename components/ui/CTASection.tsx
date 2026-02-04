@@ -45,11 +45,11 @@ export default function CTASection() {
                    style={{ backgroundSize: '200% 100%' }} />
 
               {/* Content */}
-              <div className="relative z-10 text-center max-w-4xl mx-auto">
+              <div className="relative z-10 text-left max-w-4xl">
                 
                 {/* Small label */}
                 <div 
-                  className={`flex items-center justify-center gap-3 mb-6 transition-all duration-1000 ${
+                  className={`flex items-center justify-start gap-3 mb-6 transition-all duration-1000 ${
                     ctaInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                   style={{ transitionDelay: '0.2s' }}
@@ -75,7 +75,7 @@ export default function CTASection() {
 
                 {/* Description */}
                 <p 
-                  className={`text-lg md:text-xl text-cream/80 mb-10 max-w-2xl mx-auto leading-relaxed transition-all duration-1000 ${
+                  className={`text-lg md:text-xl text-cream/80 mb-10 max-w-2xl leading-relaxed transition-all duration-1000 ${
                     ctaInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                   style={{ transitionDelay: '0.4s' }}
@@ -85,7 +85,7 @@ export default function CTASection() {
 
                 {/* CTA Buttons */}
                 <div 
-                  className={`flex flex-col sm:flex-row gap-4 justify-center mb-12 transition-all duration-1000 ${
+                  className={`flex flex-col sm:flex-row gap-4 justify-start mb-12 transition-all duration-1000 ${
                     ctaInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                   style={{ transitionDelay: '0.5s' }}
@@ -93,8 +93,8 @@ export default function CTASection() {
                   <Button
                     href="/contact"
                     variant="primary"
-                    size="lg"
-                    className="hover:scale-105"
+                    size="md"
+                    className="hover:scale-105 md:px-8 md:py-4 md:text-lg"
                     rightIcon={
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
                     }
@@ -105,7 +105,8 @@ export default function CTASection() {
                   <Button
                     href="/portfolio"
                     variant="outline-light"
-                    size="lg"
+                    size="md"
+                    className="md:px-8 md:py-4 md:text-lg"
                     rightIcon={
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
                     }

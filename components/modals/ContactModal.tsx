@@ -284,8 +284,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 onClick={handleSubmit}
                 disabled={isSubmitting}
                 variant="primary"
-                size="lg"
-                className="w-full sm:w-auto font-bold hover:scale-105"
+                size="md"
+                className="w-full sm:w-auto font-bold hover:scale-105 md:px-8 md:py-4 md:text-lg"
               >
                 {isSubmitting ? (
                   <>

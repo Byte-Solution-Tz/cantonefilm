@@ -45,11 +45,11 @@ export default function CTASection() {
                    style={{ backgroundSize: '200% 100%' }} />
 
               {/* Content */}
-              <div className="relative z-10 text-center max-w-4xl mx-auto">
+              <div className="relative z-10 text-left max-w-4xl">
                 
                 {/* Small label */}
                 <div 
-                  className={`flex items-center justify-center gap-3 mb-6 transition-all duration-1000 ${
+                  className={`flex items-center justify-start gap-3 mb-6 transition-all duration-1000 ${
                     ctaInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                   style={{ transitionDelay: '0.2s' }}
@@ -75,7 +75,7 @@ export default function CTASection() {
 
                 {/* Description */}
                 <p 
-                  className={`text-lg md:text-xl text-cream/80 mb-10 max-w-2xl mx-auto leading-relaxed transition-all duration-1000 ${
+                  className={`text-lg md:text-xl text-cream/80 mb-10 max-w-2xl leading-relaxed transition-all duration-1000 ${
                     ctaInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                   style={{ transitionDelay: '0.4s' }}
@@ -85,26 +85,34 @@ export default function CTASection() {
 
                 {/* CTA Buttons */}
                 <div 
-                  className={`flex flex-col sm:flex-row gap-4 justify-center mb-12 transition-all duration-1000 ${
+                  className={`flex flex-col sm:flex-row gap-4 justify-start mb-12 transition-all duration-1000 ${
                     ctaInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                   style={{ transitionDelay: '0.5s' }}
                 >
-                  <a
+                  <Button
                     href="/contact"
-                    className="inline-flex items-center justify-center gap-3 bg-gold text-navy px-8 py-4 text-lg font-medium hover:bg-gold/90 transition-all duration-300 group hover:scale-105"
+                    variant="primary"
+                    size="md"
+                    className="hover:scale-105 md:px-8 md:py-4 md:text-lg"
+                    rightIcon={
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                    }
                   >
                     Start Your Project
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
-                  </a>
+                  </Button>
 
-                  <a
+                  <Button
                     href="/portfolio"
-                    className="inline-flex items-center justify-center gap-3 bg-transparent border-2 border-cream text-cream px-8 py-4 text-lg font-medium hover:bg-cream hover:text-navy transition-all duration-300 group"
+                    variant="outline-light"
+                    size="md"
+                    className="md:px-8 md:py-4 md:text-lg"
+                    rightIcon={
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                    }
                   >
                     View Our Work
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
-                  </a>
+                  </Button>
                 </div>
 
                 {/* Contact methods - Quick access */}

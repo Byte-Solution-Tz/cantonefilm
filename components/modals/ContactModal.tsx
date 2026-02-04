@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Send, User, Mail, Phone, MessageSquare, Building, FileText } from 'lucide-react';
+import Button from '@/components/ui/Button';
 
 type ContactModalProps = {
   isOpen: boolean;
@@ -69,7 +70,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
@@ -117,13 +118,15 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
       >
         {/* Header */}
         <div className="sticky top-0 bg-gradient-to-br from-navy to-brown p-6 md:p-8 z-10">
-          <button
+          <Button
             onClick={onClose}
-            className="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-cream hover:bg-cream/10 transition-colors duration-300 group"
-            aria-label="Close modal"
+            variant="ghost"
+            size="icon"
+            className="absolute top-6 right-6 h-10 w-10 text-cream hover:bg-cream/10"
+            ariaLabel="Close modal"
           >
             <X className="w-6 h-6 group-hover:rotate-90 transition-transform duration-300" />
-          </button>
+          </Button>
 
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-4">
@@ -277,10 +280,12 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           {/* Submit Button */}
           {submitStatus !== 'success' && (
             <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
-              <button
+              <Button
                 onClick={handleSubmit}
                 disabled={isSubmitting}
-                className="w-full sm:w-auto group flex items-center justify-center gap-3 bg-gold text-navy px-8 py-4 font-bold text-lg hover:bg-gold/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105"
+                variant="primary"
+                size="md"
+                className="w-full sm:w-auto font-bold hover:scale-105 md:px-8 md:py-4 md:text-lg"
               >
                 {isSubmitting ? (
                   <>
@@ -293,7 +298,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </>
                 )}
-              </button>
+              </Button>
 
               <p className="text-brown/60 text-sm">
                 * Required fields

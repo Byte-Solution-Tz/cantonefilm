@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/layout/Container';
 import Section from '@/components/ui/Section';
+import Button from '@/components/ui/Button';
 import { portfolio } from '@/data/portfolio';
 import { PortfolioCategory } from '@/types/interface';
 import { Play, ExternalLink, Filter } from 'lucide-react';
@@ -18,7 +19,7 @@ export default function PortfolioPageClient() {
   const [gridRef, gridInView] = useInView({ threshold: 0.15 });
 
   const categories = useMemo<(PortfolioCategory | 'All')[]>(() => {
-    const unique = Array.from(new Set(portfolio.map(p => p.category)));
+    const unique = Array.from(new Set(portfolio.map(p => p.category))) as PortfolioCategory[];
     return ['All', ...unique];
   }, []);
 
@@ -34,11 +35,11 @@ export default function PortfolioPageClient() {
         <Container>
           <div
             ref={headerRef}
-            className={`text-center max-w-4xl mx-auto transition-all duration-1000 ${
+            className={`text-left max-w-4xl transition-all duration-1000 ${
               headerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            <div className="flex justify-center items-center gap-3 mb-6">
+            <div className="flex justify-start items-center gap-3 mb-6">
               <span className="w-12 h-px bg-gold" />
               <span className="text-gold tracking-widest text-sm uppercase">
                 Our Work
@@ -52,7 +53,7 @@ export default function PortfolioPageClient() {
               <span className="text-brown">Inspire Change</span>
             </h1>
 
-            <p className="text-xl text-brown/80 max-w-3xl mx-auto">
+            <p className="text-xl text-brown/80 max-w-3xl">
               A curated selection of visual stories crafted for impact,
               education, and global audiences.
             </p>
@@ -68,17 +69,15 @@ export default function PortfolioPageClient() {
             <div className="flex gap-3 mb-12 overflow-x-auto">
               <Filter className="w-5 h-5 text-brown shrink-0" />
               {categories.map(cat => (
-                <button
+                <Button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-6 py-3 border-2 text-sm font-medium transition-all ${
-                    activeCategory === cat
-                      ? 'bg-gold text-navy border-gold'
-                      : 'border-brown/20 text-brown hover:border-gold hover:text-gold'
-                  }`}
+                  variant={activeCategory === cat ? 'primary' : 'outline'}
+                  size="sm"
+                  className={activeCategory === cat ? '' : 'border-brown/20 text-brown hover:border-gold hover:text-gold hover:bg-transparent'}
                 >
                   {cat}
-                </button>
+                </Button>
               ))}
             </div>
 

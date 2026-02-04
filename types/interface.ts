@@ -22,23 +22,30 @@ export type PortfolioCategory =
   | 'Impact Stories'
   | 'Fictional Films';
 
-export type PortfolioItem = {
+export interface PortfolioLink {
+  label: string;
+  url: string;
+}
+
+export interface PortfolioItem {
   title: string;
   slug: string;
-  image: string;
-
-  category: PortfolioCategory;
-
+  category: string;
   coverImage: string;
-
+  image?: string;
   excerpt: string;
 
-  /** Vimeo video ID (for modal + hero video) */
+  // Media
   vimeoId?: string;
-
-  /** Optional external campaign link */
   externalLink?: string;
 
-  /** Marks item as featured */
+  // Flags
   featured?: boolean;
-};
+
+  // Long-form content (NEW – optional)
+  description?: string;
+  goal?: string;
+  approach?: string;
+  results?: string;
+  links?: PortfolioLink[];
+}

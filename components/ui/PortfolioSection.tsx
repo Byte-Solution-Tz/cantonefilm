@@ -5,7 +5,7 @@ import Container from '@/components/layout/Container';
 import Button from '@/components/ui/Button';
 import { portfolio } from '@/data/portfolio';
 import { useInView } from '@/hooks/useInView';
-import { Play, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, Play, ArrowUpRight } from 'lucide-react';
 
 export default function PortfolioSection() {
   const [sectionRef, inView] = useInView({ threshold: 0.15 });
@@ -62,7 +62,14 @@ export default function PortfolioSection() {
                 <Stat value="15+" label="Countries" />
               </div> */}
 
-              <Button href="/portfolio">View All Works</Button>
+              <Button
+                href="/portfolio"
+                rightIcon={
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                }
+              >
+                View All Works
+              </Button>
 
               <p className="text-xs text-brown/60 italic">
                 Hover a project to explore
@@ -91,7 +98,7 @@ export default function PortfolioSection() {
                   >
                     {/* Image */}
                     <Image
-                      src={item.image}
+                      src={item.coverImage}
                       alt={item.title}
                       fill
                       className="
@@ -164,14 +171,5 @@ export default function PortfolioSection() {
 
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
     </section>
-  );
-}
-
-function Stat({ value, label }: { value: string; label: string }) {
-  return (
-    <div>
-      <div className="text-3xl md:text-4xl font-bold text-gold">{value}</div>
-      <div className="text-xs text-brown/70 uppercase tracking-wide">{label}</div>
-    </div>
   );
 }

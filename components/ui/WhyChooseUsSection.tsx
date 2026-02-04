@@ -42,9 +42,9 @@ export default function WhyChooseUsSection() {
 
             {/* UNDER IMAGE — Results Driven */}
             <WhyItem
-              title="Results-Driven Content"
-              text="Our productions support reporting, advocacy, fundraising, and public engagement by delivering content aligned with program objectives and communication strategies."
-            />
+                title="Development & NGO Experience"
+                text="We understand reporting requirements, donor communication needs, and impact documentation, enabling us to translate complex programs into compelling visual narratives."
+              />
           </div>
 
           {/* RIGHT COLUMN */}
@@ -64,22 +64,36 @@ export default function WhyChooseUsSection() {
             </div>
 
             {/* Heading */}
-            <h2 className="text-4xl md:text-5xl font-bold text-navy mb-10 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6 leading-tight">
               Why <br />
-              <span className="text-brown">Choose Us?</span>
+              <span className="text-brown">Choose Cantone Films</span>
             </h2>
+
+            {/* Intro sentence */}
+            <p className="text-brown/80 max-w-xl mb-10 leading-relaxed">
+              We work at the intersection of storytelling, development communication,
+              and community engagement—helping organizations communicate impact
+              clearly, ethically, and effectively.
+            </p>
 
             {/* Right-side points */}
             <div className="space-y-10 max-w-xl">
               <WhyItem
-                title="Storytelling for Impact"
-                text="We focus on stories that inspire action, raise awareness, and support development goals. Our films communicate results clearly and emotionally to stakeholders and beneficiaries."
+                title="Impact-Focused Storytelling"
+                text="We design stories that raise awareness, communicate measurable outcomes, and inspire positive action—supporting advocacy, education, and development goals."
               />
 
               <WhyItem
-                title="Community-Centered Approach"
-                text="We work respectfully within communities, ensuring participants feel safe, represented, and valued throughout the filmmaking process."
+                title="Ethical Community Engagement"
+                text="Our work prioritizes informed consent, respectful representation, and cultural sensitivity, ensuring communities are portrayed with dignity and accuracy."
               />
+
+              <WhyItem
+                title="Professional Production Standards"
+                text="We deliver broadcast-ready content with reliable timelines, clear communication, and high technical quality—meeting institutional and donor expectations."
+              />
+
+              
             </div>
           </div>
 

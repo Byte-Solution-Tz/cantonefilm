@@ -1,53 +1,100 @@
+// /data/services.ts
+
 export const services = [
   {
-    id: 'documentary',
-    title: 'Corporate Videos & Documentaries',
-    backgroundTitle: 'DOCUMENTARY',
+    id: 'film-video-production',
+    title: 'Film, TV & Video Production',
+    backgroundTitle: 'FILM & VIDEO',
     description:
-      'We turn business goals into captivating visual stories. From training films to brand documentaries, Cantone Films delivers cinematic productions that reflect your mission and inspire your audience.',
-    image: '/img/documentary-banner.png',
+      'We produce documentaries, corporate films, commercials, social media content, and narrative films using professional crews and cinematic techniques to deliver visually powerful stories.',
+    image: '/img/portfolio/documentary-banner.png',
     features: [
-      'Research & Development',
-      'Field Production',
-      'Post-Production',
+      'Documentary & Corporate Films',
+      'Commercials & Social Media Content',
+      'Narrative & TV Productions',
+      'Professional Crews & Equipment',
     ],
     cta: {
-      label: 'View Documentary Work',
-      href: '/services/documentary',
+      label: 'View Film Projects',
+      href: '/services/film-video',
     },
   },
+
   {
-    id: 'impact',
-    title: 'Success & Impact Story Videos',
-    backgroundTitle: 'IMPACT STORY',
+    id: 'story-creative-development',
+    title: 'Story & Creative Development',
+    backgroundTitle: 'STORY',
     description:
-      'Real people. Real outcomes. We tell real stories of growth, change, and achievement. Our success and impact videos highlight how your projects, people, or initiatives make a difference — connecting emotion with measurable results.',
-    image: '/img/left-documentary-banner.png',
+      'Our team supports research, concept creation, scriptwriting, storyboarding, and production planning to ensure each project begins with a clear and compelling narrative.',
+    image: '/img/portfolio/left-documentary-banner.png',
     features: [
-      'Brand Strategy',
-      'Creative Direction',
-      'Full Production',
+      'Research & Concept Development',
+      'Scriptwriting',
+      'Storyboarding',
+      'Production Planning',
     ],
     cta: {
-      label: 'Explore Impact Stories',
-      href: '/services/commercial',
+      label: 'Explore Our Process',
+      href: '/services/creative-development',
     },
   },
+
   {
-    id: 'fictional',
-    title: 'Fictional Films',
-    backgroundTitle: 'FICTIONAL FILMS',
+    id: 'post-production',
+    title: 'Post-Production & Visual Enhancement',
+    backgroundTitle: 'POST',
     description:
-      'Our creative heart beats in storytelling. We produce short and feature films that explore character, emotion, and humanity through cinematic craftsmanship that lingers long after the credits roll.',
-    image: '/img/documentary-banner.png',
+      'We provide professional editing, sound design, color grading, subtitles, and motion graphics to deliver polished content ready for broadcast, events, and digital platforms.',
+    image: '/img/portfolio/documentary-banner.png',
     features: [
-      'Curriculum Design',
-      'Animation & Graphics',
-      'Interactive Media',
+      'Editing & Sound Design',
+      'Color Grading',
+      'Subtitles & Accessibility',
+      'Motion Graphics',
     ],
     cta: {
-      label: 'See Fictional Projects',
-      href: '/services/educational',
+      label: 'See Post-Production Work',
+      href: '/services/post-production',
     },
   },
-];
+
+  {
+    id: 'photography-multimedia',
+    title: 'Photography & Multimedia',
+    backgroundTitle: 'PHOTOGRAPHY',
+    description:
+      'We capture high-quality photography and multimedia assets for reports, campaigns, and digital communication, ensuring visual consistency and storytelling impact.',
+    image: '/img/portfolio/left-documentary-banner.png',
+    features: [
+      'Professional Photography',
+      'Campaign & Report Assets',
+      'Digital & Print Use',
+      'Visual Consistency',
+    ],
+    cta: {
+      label: 'View Photography',
+      href: '/services/photography',
+    },
+  },
+
+  {
+    id: 'event-community-coverage',
+    title: 'Event & Community Coverage',
+    backgroundTitle: 'EVENTS',
+    description:
+      'We provide professional coverage of conferences, community programs, launches, and public events using multi-camera setups and high-quality audio.',
+    image: '/img/portfolio/documentary-banner.png',
+    features: [
+      'Conferences & Launches',
+      'Community Programs',
+      'Multi-Camera Coverage',
+      'Professional Audio Capture',
+    ],
+    cta: {
+      label: 'View Event Coverage',
+      href: '/services/events',
+    },
+  },
+] as const;
+
+export type ServiceId = typeof services[number]['id'];

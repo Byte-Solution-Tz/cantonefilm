@@ -42,7 +42,7 @@ export default function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
           ? "bg-cream/95 backdrop-blur-md shadow-lg border-b border-brown/20"
-          : "bg-transparent border-b border-cream/20"
+          : "bg-cream/95 backdrop-blur-md border-b border-brown/10"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -61,9 +61,7 @@ export default function Header() {
             <div className="absolute inset-0 bg-gold/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
           <span
-            className={`transition-colors duration-300 ${
-              isScrolled ? "text-navy" : "text-cream"
-            } group-hover:text-gold`}
+            className="transition-colors duration-300 text-navy group-hover:text-gold"
           >
             Cantone Films
           </span>
@@ -76,9 +74,7 @@ export default function Header() {
               key={item.href}
               href={item.href}
               onClick={() => setActiveLink(item.href)}
-              className={`relative text-sm font-medium transition-colors duration-300 group ${
-                isScrolled ? "text-navy" : "text-cream"
-              } hover:text-gold`}
+              className="relative text-sm font-medium transition-colors duration-300 group text-navy hover:text-gold"
             >
               {item.label}
               <span
@@ -94,7 +90,7 @@ export default function Header() {
             className={`px-6 py-2.5 text-sm font-medium transition-all duration-300 border-2 ${
               isScrolled
                 ? "bg-gold text-navy border-gold hover:bg-transparent hover:text-gold"
-                : "bg-transparent text-cream border-cream hover:bg-cream hover:text-navy"
+                : "bg-navy text-cream border-navy hover:bg-transparent hover:text-navy"
             }`}
             onClick={() => setIsModalOpen(true)}
           />
@@ -103,9 +99,7 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`md:hidden p-2 transition-colors duration-300 ${
-            isScrolled ? "text-navy" : "text-cream"
-          } hover:text-gold focus-visible:outline-gold`}
+          className="md:hidden p-2 transition-colors duration-300 text-navy hover:text-gold focus-visible:outline-gold"
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? (

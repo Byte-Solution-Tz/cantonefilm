@@ -2,9 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Button from '@/components/ui/Button';
 import { useInView } from '@/hooks/useInView';
-import { ArrowRight } from 'lucide-react';
 import type { ServiceSplitProps } from '@/types/interface';
 
 /* ---------------- Parallax Hook ---------------- */
@@ -47,7 +45,7 @@ export default function ServiceSplit({
   index,
   reverse = false,
 }: ServiceSplitProps) {
-  const { title, backgroundTitle, description, image, features, cta } = service;
+  const { title, backgroundTitle, description, image, features } = service;
 
   const [ref, isInView] = useInView({ threshold: 0.25 });
 
@@ -129,11 +127,13 @@ export default function ServiceSplit({
               {description}
             </p>
 
-            <ul className="mb-10 space-y-3">
+            <ul className={`mb-10 space-y-3 ${reverse ? 'items-end' : ''}`}>
               {features.map((feature) => (
                 <li
                   key={feature}
-                  className="flex items-center gap-3 text-cream/80 text-sm md:text-base"
+                  className={`flex items-center gap-3 text-cream/80 text-sm md:text-base ${
+                    reverse ? 'flex-row-reverse justify-end text-right' : ''
+                  }`}
                 >
                   <span className="w-1.5 h-1.5 bg-gold rounded-full" />
                   <span>{feature}</span>
@@ -141,14 +141,14 @@ export default function ServiceSplit({
               ))}
             </ul>
 
-            <Button
+            {/* <Button
               href={cta.href}
               rightIcon={
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               }
             >
               {cta.label}
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>

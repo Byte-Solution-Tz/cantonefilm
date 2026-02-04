@@ -1,7 +1,6 @@
 import { Film, Megaphone, GraduationCap, Users, Clapperboard, Video } from 'lucide-react';
-// import { ReactNode } from 'react';
 
-// Icon mapping - you can customize which icon goes with which service
+// Default icon mapping (used when no icon prop is provided)
 const serviceIcons = {
   "Documentary Production": Film,
   "Commercial Films": Megaphone,
@@ -33,7 +32,7 @@ export default function ServiceCard({
 
   return (
     <div
-      className={`group relative border-2 border-brown/20 p-8 bg-white/50 overflow-hidden transition-all duration-500 hover:border-gold hover:shadow-xl hover:-translate-y-2 ${
+      className={`group relative border-2 border-brown/10 p-8 bg-white/60 overflow-hidden transition-all duration-500 hover:border-gold hover:shadow-2xl ${
         isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
       style={{ transitionDelay: `${index * 0.1}s` }}
@@ -57,22 +56,9 @@ export default function ServiceCard({
         </h3>
 
         {/* Description */}
-        <p className="text-brown/80 leading-relaxed mb-4">
+        <p className="text-brown/80 leading-relaxed">
           {description}
         </p>
-
-        {/* Learn More Link */}
-        <div className="flex items-center gap-2 text-sm font-medium text-brown/60 group-hover:text-gold transition-colors duration-300">
-          <span>Learn more</span>
-          <svg 
-            className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" 
-            fill="none" 
-            viewBox="0 0 24 24" 
-            stroke="currentColor"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </div>
 
         {/* Bottom accent line */}
         <div className="absolute bottom-0 left-0 h-1 bg-gold w-0 group-hover:w-full transition-all duration-500" />

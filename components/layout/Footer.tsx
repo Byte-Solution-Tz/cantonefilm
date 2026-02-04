@@ -42,7 +42,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-[#3d2719] text-cyan-100">
+    <footer className="relative bg-brown-dark text-cyan-100">
       {/* Top accent */}
       <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-gold to-transparent" />
 

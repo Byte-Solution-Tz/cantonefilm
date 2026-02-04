@@ -1,3 +1,4 @@
+@config "../tailwind.config.ts";
 @import "tailwindcss";
 
 /* -----------------------------
@@ -7,8 +8,10 @@
 :root {
   --cream: #FFF9D5;
   --gold: #BD8018;
-  --brown: #7A5C4A;
   --navy: #050A30;
+  --brown: #7A5C4A;
+  --brown-dark: #3D2719;
+  --black: #000000;
 
   --transition-base: 300ms;
   --transition-slow: 500ms;
@@ -34,7 +37,7 @@ body {
   margin: 0;
   background-color: var(--cream);
   color: var(--navy);
-  font-family: var(--font-montserrat), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
 }

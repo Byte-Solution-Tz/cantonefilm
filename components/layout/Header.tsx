@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import ContactModal from "../modals/ContactModal";
 import ContactButton from "../ui/ContactButton";
 import Button from "../ui/Button";
+import { CONTACT_MODAL_EVENT } from "../modals/contactModalEvents";
 
 const navItems = [
   { label: "Home", href: "/#home", id: "home" },
@@ -57,6 +58,12 @@ export default function Header() {
     sections.forEach((section) => observer.observe(section));
 
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const handleOpen = () => setIsModalOpen(true);
+    window.addEventListener(CONTACT_MODAL_EVENT, handleOpen);
+    return () => window.removeEventListener(CONTACT_MODAL_EVENT, handleOpen);
   }, []);
 
   // Close mobile menu when clicking outside

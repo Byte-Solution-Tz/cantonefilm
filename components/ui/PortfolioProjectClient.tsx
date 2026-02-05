@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Container from '@/components/layout/Container';
 import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
+import { openContactModal } from '@/components/modals/contactModalEvents';
 import { portfolio } from '@/data/portfolio';
 import {
   Play,
@@ -110,7 +111,7 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
               {project.title}
             </h1>
 
-            <p className="text-xl md:text-2xl text-cream/90 max-w-3xl mb-8">
+            <p className="text-xl md:text-2xl text-navy max-w-3xl mb-8">
               {project.excerpt}
             </p>
 
@@ -244,10 +245,10 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
                   Let’s bring your vision to life.
                 </p>
                 <Button
-                  href="/contact"
                   variant="primary"
                   size="md"
                   fullWidth
+                  onClick={openContactModal}
                   rightIcon={<ArrowRight className="w-4 h-4" />}
                 >
                   Get In Touch

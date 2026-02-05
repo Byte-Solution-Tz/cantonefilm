@@ -102,7 +102,7 @@ export default function AboutUsSection() {
               </p>
 
               <p className="text-cream/90 leading-relaxed">
-                Our work is driven by <span className="text-gold font-medium">cultural sensitivity</span>, strong research, and cinematic craftsmanship—ensuring every story is told with authenticity, respect, and depth.
+                Our work is driven by <span className="text-gold font-medium">cultural sensitivity</span>, strong research, and cinematic craftsmanship, ensuring every story is told with authenticity, respect, and depth.
               </p>
 
               {/* Decorative line */}

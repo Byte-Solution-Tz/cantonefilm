@@ -3,6 +3,7 @@
 import { site } from '@/data/site';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
+import { openContactModal } from '@/components/modals/contactModalEvents';
 import {
   Mail,
   Phone,
@@ -107,12 +108,22 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-cream/80 hover:text-gold transition"
-                  >
-                    {link.label}
-                  </Link>
+                  {link.label === 'Contact' ? (
+                    <button
+                      type="button"
+                      onClick={openContactModal}
+                      className="text-cream/80 hover:text-gold transition text-left"
+                    >
+                      {link.label}
+                    </button>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-cream/80 hover:text-gold transition"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

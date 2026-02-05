@@ -5,7 +5,7 @@ export const portfolio: PortfolioItem[] = [
     title: 'Asia–Africa BlueTech Superhighway (AABS)',
     slug: 'aabs-bluetech-superhighway',
     category: 'Documentary',
-    coverImage: '/img/portfolio/aabs-cover.jpg',
+    coverImage: '/img/portfolio/Asia–AfricaBlueTechSuperhighway(AABS)–Multi-CountryVideoSeries.webp',
     excerpt:
       'A multi-country documentary video series highlighting how AABS is strengthening small-scale fisheries and aquaculture systems across Africa and Asia.',
     featured: true,
@@ -35,10 +35,10 @@ export const portfolio: PortfolioItem[] = [
     title: 'Tenda Teachers',
     slug: 'tenda-teachers',
     category: 'Impact Stories',
-    coverImage: '/img/portfolio/tenda-teachers-cover.jpg',
+    coverImage: '/img/portfolio/tenderteacherthumbnail.webp',
     excerpt:
       'A documentary highlighting how the Tenda Teachers program is strengthening teaching practices in Tanzanian primary schools.',
-    vimeoId: 'XXXXXXXXX',
+    vimeoId: '1128669390',
 
     description:
       'This project was commissioned by Project Zawadi to document the Tenda Teachers program, which supports primary school teachers in Tanzania to adopt improved teaching techniques through demonstration videos and targeted training.',
@@ -55,7 +55,7 @@ export const portfolio: PortfolioItem[] = [
     links: [
       {
         label: 'Watch Video',
-        url: '#',
+        url: 'https://vimeo.com/1128669390',
       },
     ],
   },

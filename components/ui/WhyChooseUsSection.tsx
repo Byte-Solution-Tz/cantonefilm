@@ -27,11 +27,11 @@ export default function WhyChooseUsSection() {
             `}
           >
             {/* Image block */}
-            <div className="relative mb-10">
-              <div className="absolute -bottom-6 -left-6 w-full h-full bg-gold z-0" />
-              <div className="relative z-10 overflow-hidden">
+            <div className="relative mb-10 ">
+              <div className="absolute -bottom-6 -left-6 w-full h-full bg-gold z-0 rounded-2xl" />
+              <div className="relative z-10 overflow-hidden rounded-2xl shadow-lg">
                 <Image
-                  src="/img/commercial-docu.png"
+                  src="/img/about/why-choose-us.webp"
                   alt="Cantone Films impact storytelling"
                   width={800}
                   height={520}

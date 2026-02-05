@@ -56,9 +56,9 @@ export default function AboutUsSection() {
           {/* Left – Image/Visual */}
           <div className="relative">
             {/* Main image */}
-            <div className="relative aspect-[4/5] bg-navy overflow-hidden group">
+            <div className="relative aspect-[4/5] bg-navy overflow-hidden group rounded-2xl shadow-lg">
               <Image
-                src="/img/about-team.jpg" 
+                src="/img/about/about-image.webp" 
                 alt="Cantone Films Team"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -86,7 +86,7 @@ export default function AboutUsSection() {
             </div>
 
             {/* Approach callout */}
-            <div className="relative bg-gradient-to-br from-navy to-brown p-8 text-cream">
+            <div className="relative bg-gradient-to-br from-navy to-brown p-8 text-cream rounded-2xl">
               {/* Corner accent */}
               <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-gold/20 to-transparent" />
               

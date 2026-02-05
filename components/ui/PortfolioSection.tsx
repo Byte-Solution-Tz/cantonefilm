@@ -86,7 +86,7 @@ export default function PortfolioSection() {
                 return (
                   <a
                     key={item.title}
-                    href={`/portfolio/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                    href={`/portfolio/${item.slug}`}
                     className={`
                       group relative overflow-hidden bg-navy
                       will-change-transform

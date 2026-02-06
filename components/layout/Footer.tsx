@@ -2,6 +2,7 @@
 
 import { site } from '@/data/site';
 import Link from 'next/link';
+import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import { openContactModal } from '@/components/modals/contactModalEvents';
 import {
@@ -28,7 +29,12 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-brown-dark text-cyan-100">
+    <footer className="relative text-cyan-100 overflow-hidden">
+      {/* Modern background */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-navy via-brown-dark to-brown" />
+      <div className="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-gold/10 blur-3xl -z-10" />
+      <div className="absolute -bottom-40 right-0 h-96 w-96 rounded-full bg-cream/5 blur-3xl -z-10" />
+
       {/* Top accent */}
       <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-gold to-transparent" />
 
@@ -38,7 +44,17 @@ export default function Footer() {
           {/* Brand + Contact */}
           <div className="space-y-8">
             <Link href="/" className="flex items-center gap-3">
-              <span className="text-2xl font-bold">{site.name}</span>
+              <div className="relative h-14 w-48 overflow-hidden">
+                <Image
+                  src="/LogoCantone–Alpha.webp"
+                  alt="Cantone Films logo"
+                  fill
+                  className="object-contain scale-125 origin-center invert brightness-50 contrast-110"
+                />
+              </div>
+              {/* <span className="text-cream text-lg font-semibold tracking-wide">
+                {site.name}
+              </span> */}
             </Link>
 
             <p className="text-cream/80 max-w-2xl leading-relaxed text-base">
@@ -152,11 +168,11 @@ export default function Footer() {
 
       {/* Subtle texture */}
       <div
-        className="absolute inset-0 opacity-[0.02] pointer-events-none"
+        className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{
           backgroundImage:
-            'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.3) 1px, transparent 0)',
-          backgroundSize: '32px 32px',
+            'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.35) 1px, transparent 0)',
+          backgroundSize: '28px 28px',
         }}
       />
     </footer>

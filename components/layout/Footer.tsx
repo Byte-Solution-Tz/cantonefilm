@@ -13,23 +13,7 @@ import {
   Twitter,
   Linkedin,
   ArrowUp,
-  Film,
-  Send,
 } from 'lucide-react';
-
-const quickLinks = [
-  { label: 'About', href: '/about' },
-  { label: 'Services', href: '/services' },
-  { label: 'Portfolio', href: '/portfolio' },
-  { label: 'Contact', href: '/contact' },
-];
-
-const services = [
-  { label: 'Documentary Production', href: '/services/documentary' },
-  { label: 'Commercial Films', href: '/services/commercial' },
-  { label: 'Educational Content', href: '/services/educational' },
-  { label: 'Event Coverage', href: '/services/events' },
-];
 
 const socialLinks = [
   { icon: Instagram, href: site.social?.instagram || '#', label: 'Instagram' },
@@ -50,18 +34,18 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 py-20">
         {/* Main grid */}
-        <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-12">
-          {/* Brand */}
-          <div className="lg:col-span-5 space-y-6">
+        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-start">
+          {/* Brand + Contact */}
+          <div className="space-y-8">
             <Link href="/" className="flex items-center gap-3">
               <span className="text-2xl font-bold">{site.name}</span>
             </Link>
 
-            <p className="text-cream/80 max-w-md leading-relaxed">
+            <p className="text-cream/80 max-w-2xl leading-relaxed text-base">
               {site.tagline}
             </p>
 
-            <div className="space-y-3 text-sm">
+            <div className="grid gap-4 sm:grid-cols-2 text-sm">
               <a
                 href={`mailto:${site.email}`}
                 className="flex items-center gap-3 text-cream/80 hover:text-gold transition"
@@ -85,7 +69,7 @@ export default function Footer() {
             </div>
 
             {/* Social */}
-            <div className="flex gap-4 pt-4">
+            <div className="flex gap-4 pt-2">
               {socialLinks.map(({ icon: Icon, href, label }) => (
                 <Link
                   key={label}
@@ -100,54 +84,48 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="lg:col-span-2">
-            <h4 className="mb-6 text-gold text-xs tracking-widest uppercase font-semibold">
-              Explore
-            </h4>
-            <ul className="space-y-3 text-sm">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  {link.label === 'Contact' ? (
-                    <button
-                      type="button"
-                      onClick={openContactModal}
-                      className="text-cream/80 hover:text-gold transition text-left"
-                    >
-                      {link.label}
-                    </button>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      className="text-cream/80 hover:text-gold transition"
-                    >
-                      {link.label}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
+          {/* CTA Panel */}
+          <div className="relative overflow-hidden rounded-3xl border border-cream/10 bg-gradient-to-br from-navy/60 via-brown/40 to-brown/60 p-8 md:p-10">
+            <div className="absolute inset-0 opacity-[0.05]" style={{
+              backgroundImage:
+                'radial-gradient(circle at 2px 2px, rgba(189, 128, 24, 0.4) 1px, transparent 0)',
+              backgroundSize: '36px 36px',
+            }} />
+            <div className="relative z-10 space-y-6">
+              <div>
+                <p className="text-gold text-xs tracking-widest uppercase font-semibold mb-3">
+                  Ready to collaborate
+                </p>
+                <h3 className="text-2xl md:text-3xl font-bold text-cream leading-tight">
+                  Let&apos;s shape a story that lasts.
+                </h3>
+              </div>
+              <p className="text-cream/80 text-sm leading-relaxed">
+                Share your goals and we&apos;ll recommend the best approach for
+                your project and audience.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button
+                  onClick={openContactModal}
+                  variant="primary"
+                  size="md"
+                  className="md:px-7 md:py-3"
+                >
+                  Start a Project
+                </Button>
+                <Button
+                  href={`https://wa.me/${site.phone.replace(/\D/g, '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="outline-light"
+                  size="md"
+                  className="md:px-7 md:py-3"
+                >
+                  Chat on WhatsApp
+                </Button>
+              </div>
+            </div>
           </div>
-
-          {/* Services */}
-          <div className="lg:col-span-2">
-            <h4 className="mb-6 text-gold text-xs tracking-widest uppercase font-semibold">
-              Services
-            </h4>
-            <ul className="space-y-3 text-sm">
-              {services.map((service) => (
-                <li key={service.href}>
-                  <Link
-                    href={service.href}
-                    className="text-cream/80 hover:text-gold transition"
-                  >
-                    {service.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
         </div>
 
         {/* Divider */}

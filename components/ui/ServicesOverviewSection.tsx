@@ -9,6 +9,7 @@ import type { ServiceId } from '@/data/services';
 import { useInView } from '@/hooks/useInView';
 import { Film, PenTool, Layers, Camera, Users, ArrowRight } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { openContactModal } from '@/components/modals/contactModalEvents';
 
 const serviceIcons: Record<ServiceId, LucideIcon> = {
   'film-video-production': Film,
@@ -83,7 +84,7 @@ export default function ServicesOverviewSection() {
           }`}
           style={{ transitionDelay: '0.6s' }}
         >
-          <div className="relative overflow-hidden bg-gradient-to-br from-navy via-navy/98 to-brown/90 p-10 md:p-14">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-navy via-navy/98 to-brown/90 p-10 md:p-14">
             {/* Decorative pattern */}
             <div 
               className="absolute inset-0 opacity-5"
@@ -103,15 +104,15 @@ export default function ServicesOverviewSection() {
                   Not Sure Which Service You Need?
                 </h3>
                 <p className="text-cream/80 text-lg leading-relaxed">
-                  Every project is unique. Let's discuss your goals and find the perfect solution for your story.
+                  Every project is unique. Let&apos;s discuss your goals and find the perfect solution for your story.
                 </p>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
-                  href="/services"
                   variant="primary"
                   size="md"
+                  onClick={openContactModal}
                   className="whitespace-nowrap hover:scale-105 md:px-8 md:py-4 md:text-lg"
                   rightIcon={
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />

@@ -1,10 +1,12 @@
 'use client';
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import ContactModal from "../modals/ContactModal";
 import ContactButton from "../ui/ContactButton";
 import Button from "../ui/Button";
+import { CONTACT_MODAL_EVENT } from "../modals/contactModalEvents";
 
 const navItems = [
   { label: "Home", href: "/#home", id: "home" },
@@ -59,6 +61,12 @@ export default function Header() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const handleOpen = () => setIsModalOpen(true);
+    window.addEventListener(CONTACT_MODAL_EVENT, handleOpen);
+    return () => window.removeEventListener(CONTACT_MODAL_EVENT, handleOpen);
+  }, []);
+
   // Close mobile menu when clicking outside
   useEffect(() => {
     if (isMobileMenuOpen || isModalOpen) {
@@ -80,22 +88,22 @@ export default function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2 text-2xl md:text-2xl font-bold group"
+          className="flex items-center gap-3 group"
           onClick={() => setActiveLink("/")}
         >
-          <div className="relative">
-            {/* <Film
-              className={`w-6 h-6 md:w-7 md:h-7 transition-all duration-300 ${
-                isScrolled ? "text-gold" : "text-cream"
-              } group-hover:text-gold group-hover:rotate-12`}
-            /> */}
+          <div className="relative h-12 w-40 md:h-14 md:w-48 overflow-hidden">
+            <Image
+              src="/LogoCantone–Alpha.webp"
+              alt="Cantone Films logo"
+              fill
+              className="object-contain scale-90 origin-center"
+              priority
+            />
             <div className="absolute inset-0 bg-gold/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
-          <span
-            className="transition-colors duration-300 text-navy group-hover:text-gold"
-          >
+          {/* <span className="text-navy font-bold text-lg md:text-xl tracking-wide group-hover:text-gold transition-colors duration-300">
             Cantone Films
-          </span>
+          </span> */}
         </Link>
 
         {/* Desktop Navigation */}

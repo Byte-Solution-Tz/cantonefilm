@@ -56,9 +56,9 @@ export default function AboutUsSection() {
           {/* Left – Image/Visual */}
           <div className="relative">
             {/* Main image */}
-            <div className="relative aspect-[4/5] bg-navy overflow-hidden group">
+            <div className="relative aspect-[4/5] bg-navy overflow-hidden group rounded-2xl shadow-lg">
               <Image
-                src="/img/about-team.jpg" 
+                src="/img/about/about-image.webp" 
                 alt="Cantone Films Team"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -86,13 +86,12 @@ export default function AboutUsSection() {
             </div>
 
             {/* Approach callout */}
-            <div className="relative bg-gradient-to-br from-navy to-brown p-8 text-cream">
-              {/* Corner accent */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-gold/20 to-transparent" />
+            <div className="relative bg-gradient-to-br from-navy to-brown p-8 text-cream rounded-2xl">
+              
               
               <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
-                <div className="w-10 h-10 bg-gold/20 flex items-center justify-center">
-                  <Target className="w-5 h-5 text-gold" />
+                <div className="w-10 h-10 bg-gold/20 flex rounded-2xl items-center justify-center">
+                  <Target className="w-5 h-5 text-gold " />
                 </div>
                 Our Approach
               </h3>
@@ -102,7 +101,7 @@ export default function AboutUsSection() {
               </p>
 
               <p className="text-cream/90 leading-relaxed">
-                Our work is driven by <span className="text-gold font-medium">cultural sensitivity</span>, strong research, and cinematic craftsmanship—ensuring every story is told with authenticity, respect, and depth.
+                Our work is driven by <span className="text-gold font-medium">cultural sensitivity</span>, strong research, and cinematic craftsmanship, ensuring every story is told with authenticity, respect, and depth.
               </p>
 
               {/* Decorative line */}

@@ -5,6 +5,7 @@ import { ArrowRight, Play } from 'lucide-react';
 import Container from '@/components/layout/Container';
 import Button from '@/components/ui/Button';
 import { useInView } from '@/hooks/useInView';
+import { openContactModal } from '@/components/modals/contactModalEvents';
 
 export default function CantoneFilmsHero() {
   const [heroRef] = useInView();
@@ -96,9 +97,9 @@ export default function CantoneFilmsHero() {
                 style={{ animationDelay: '0.5s' }}
               >
                 <Button
-                  href="#contact"
                   variant="outline"
                   size="lg"
+                  onClick={openContactModal}
                   rightIcon={
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
                   }
@@ -112,10 +113,10 @@ export default function CantoneFilmsHero() {
                 style={{ animationDelay: '0.5s' }}
               >
                 <Button
-                  href="#contact"
                   variant="primary"
                   size="md"
                   fullWidth
+                  onClick={openContactModal}
                   rightIcon={
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
                   }

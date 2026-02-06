@@ -104,16 +104,16 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   if (typeof document === 'undefined') return null;
 
   return createPortal(
-    <div 
-      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 animate-fadeIn"
-      onClick={onClose}
-    >
+      <div 
+        className="fixed inset-0 z-[9999] flex items-center justify-center p-4 animate-fadeIn"
+        onClick={onClose}
+      >
       {/* Backdrop */}
       <div className="absolute inset-0 bg-navy/95 backdrop-blur-sm z-0" />
 
       {/* Modal */}
       <div 
-        className="relative z-10 bg-cream w-full max-w-4xl max-h-[90vh] overflow-y-auto animate-scaleIn"
+        className="relative z-10 bg-cream w-full max-w-4xl max-h-[90vh] overflow-y-auto contact-modal-animate"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
@@ -340,7 +340,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           animation: fadeIn 0.2s ease-out;
         }
 
-        .animate-scaleIn {
+        .contact-modal-animate {
           animation: scaleIn 0.3s ease-out;
         }
       `}</style>

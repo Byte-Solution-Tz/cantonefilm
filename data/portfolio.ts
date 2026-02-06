@@ -2,60 +2,60 @@ import type { PortfolioItem } from '@/types/interface';
 
 export const portfolio: PortfolioItem[] = [
   {
-    title: 'Asia–Africa BlueTech Superhighway (AABS)',
+    title: 'Asia–Africa BlueTech Superhighway (AABS) – Multi-Country Video Series',
     slug: 'aabs-bluetech-superhighway',
     category: 'Documentary',
-    coverImage: '/img/portfolio/aabs-cover.jpg',
+    coverImage: '/img/portfolio/Asia–AfricaBlueTechSuperhighway(AABS)–Multi-CountryVideoSeries.webp',
     excerpt:
-      'A multi-country documentary video series highlighting how AABS is strengthening small-scale fisheries and aquaculture systems across Africa and Asia.',
+      'A multi-country documentary series on the Asia–Africa BlueTech Superhighway (AABS), highlighting how small-scale fishing and aquaculture communities are being supported through data systems, climate-smart technologies, value addition, and inclusive fisheries management.',
     featured: true,
 
     description:
-      'This project documents the early progress of the Asia–Africa BlueTech Superhighway (AABS) across five countries in Africa and Asia, led by WorldFish. Through a series of country-focused videos, the project highlights how small-scale fishing and aquaculture communities are being supported through improved data systems, climate-smart technologies, value addition, and inclusive fisheries management.',
+      'This project documents the early progress of the Asia–Africa BlueTech Superhighway (AABS) across five countries in Africa and Asia led by WorldFish. Through a series of country-focused videos, the project highlights how small-scale fishing and aquaculture communities are being supported through improved data systems, climate-smart technologies, value addition, and more inclusive fisheries management, working closely with national institutions and local partners.',
 
     goal:
-      'To showcase how AABS is strengthening aquatic food systems across diverse contexts by improving productivity, resilience, and gender-inclusive participation within small-scale fisheries and aquaculture.',
+      'The goal of the project is to showcase how AABS is strengthening aquatic food systems across different contexts by improving productivity, resilience, and gender-inclusive participation within small-scale fisheries and aquaculture.',
 
     approach:
-      'We adopted a documentary-style approach, working closely with WorldFish and in-country partners to capture real activities, voices, and experiences on the ground. Interviews, field footage, and contextual visuals were combined to translate complex research and development initiatives into clear, accessible stories.',
+      'We adopted a documentary-style approach, collaborating with WorldFish and in-country partners to capture real activities, voices, and experiences on the ground. By combining interviews, field footage, and contextual visuals, the videos translate complex research and development efforts into clear, accessible stories tailored to each country’s realities.',
 
     results:
-      'The project delivered a coordinated series of five country-level videos that now serve as communication and knowledge-sharing tools for partners, donors, and wider audiences.',
+      'The project delivered a coordinated series of five videos—one from each participating country—providing a clear overview of AABS’s early progress, partnerships, and direction. The videos serve as communication and knowledge-sharing tools for partners, donors, and wider audiences, supporting engagement and understanding across regions.',
 
     links: [
-      { label: 'Bangladesh', url: '#' },
-      { label: 'Nigeria', url: '#' },
-      { label: 'Tanzania', url: '#' },
-      { label: 'Kenya', url: '#' },
-      { label: 'Mozambique', url: '#' },
+      { label: 'Bangladesh', url: 'https://vimeo.com/1066148172' },
+      { label: 'Nigeria', url: 'https://vimeo.com/1064781589' },
+      { label: 'Tanzania', url: 'https://vimeo.com/1065895890' },
+      { label: 'Kenya', url: 'https://vimeo.com/1064263847' },
+      { label: 'Mozambique', url: 'https://vimeo.com/1141071077' },
     ],
   },
 
   {
-    title: 'Tenda Teachers',
+    title: 'Tenda Teachers – Teacher Professional Development Video',
     slug: 'tenda-teachers',
     category: 'Impact Stories',
-    coverImage: '/img/portfolio/tenda-teachers-cover.jpg',
+    coverImage: '/img/portfolio/tenderteacherthumbnail.webp',
     excerpt:
-      'A documentary highlighting how the Tenda Teachers program is strengthening teaching practices in Tanzanian primary schools.',
-    vimeoId: 'XXXXXXXXX',
+      'A documentary highlighting how the Tenda Teachers program strengthens teaching practices and creates more engaging classroom environments for primary school teachers in Tanzania.',
+    vimeoId: '1128669390',
 
     description:
-      'This project was commissioned by Project Zawadi to document the Tenda Teachers program, which supports primary school teachers in Tanzania to adopt improved teaching techniques through demonstration videos and targeted training.',
+      'This project was commissioned by Project Zawadi to document the Tenda Teachers program, which supports primary school teachers in Tanzania to adopt improved teaching techniques through demonstration videos and targeted training. The film highlights how these resources help teachers create more engaging and effective classroom environments.',
 
     goal:
-      'To showcase how the Tenda Teachers program strengthens teaching practices and improves learning outcomes for pupils in primary schools.',
+      'The goal of the project was to showcase how the Tenda Teachers program is strengthening teaching practices and improving learning outcomes for pupils in primary schools.',
 
     approach:
-      'Using a documentary-style approach, we captured classroom demonstrations, training sessions, and teacher perspectives. The focus was on real classroom experiences to clearly communicate the program’s methods and impact.',
+      'We used a documentary-style approach, capturing classroom demonstrations, training activities, and teacher perspectives. Working closely with Project Zawadi, we focused on real classroom experiences to clearly communicate the program’s methods and impact.',
 
     results:
-      'The final video serves as a concise communication and advocacy tool for partners and donors supporting education initiatives in Tanzania.',
+      'The final video provides a concise overview of the Tenda Teachers program and serves as a communication and advocacy tool for partners and donors supporting education initiatives in Tanzania.',
 
     links: [
       {
         label: 'Watch Video',
-        url: '#',
+        url: 'https://vimeo.com/1128669390',
       },
     ],
   },

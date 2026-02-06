@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Container from '@/components/layout/Container';
 import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
+import { openContactModal } from '@/components/modals/contactModalEvents';
 import { portfolio } from '@/data/portfolio';
 import {
   Play,
@@ -106,11 +107,11 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
               {project.category}
             </span>
 
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-cream mb-6 max-w-5xl leading-tight">
+            <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold text-cream mb-6 max-w-5xl leading-tight">
               {project.title}
             </h1>
 
-            <p className="text-xl md:text-2xl text-cream/90 max-w-3xl mb-8">
+            <p className="text-xl md:text-2xl text-navy max-w-3xl mb-8">
               {project.excerpt}
             </p>
 
@@ -181,20 +182,53 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
             }`}
           >
             <div className="lg:col-span-2 space-y-12">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-navy mb-6">
-                  About This Project
-                </h2>
-                <p className="text-brown/80 leading-relaxed mb-4">
-                  {project.excerpt}
-                </p>
-                <p className="text-brown/80 leading-relaxed">
-                  Crafted with intention, this project reflects our belief in
-                  storytelling that informs, inspires, and drives impact.
-                </p>
+              <div className="space-y-8">
+                {(project.description || project.excerpt) && (
+                  <div>
+                    <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
+                      Project Description
+                    </h2>
+                    <p className="text-brown/80 leading-relaxed">
+                      {project.description ?? project.excerpt}
+                    </p>
+                  </div>
+                )}
+
+                {project.goal && (
+                  <div>
+                    <h3 className="text-2xl font-bold text-navy mb-4">
+                      Project Goal
+                    </h3>
+                    <p className="text-brown/80 leading-relaxed">
+                      {project.goal}
+                    </p>
+                  </div>
+                )}
+
+                {project.approach && (
+                  <div>
+                    <h3 className="text-2xl font-bold text-navy mb-4">
+                      Our Approach
+                    </h3>
+                    <p className="text-brown/80 leading-relaxed">
+                      {project.approach}
+                    </p>
+                  </div>
+                )}
+
+                {project.results && (
+                  <div>
+                    <h3 className="text-2xl font-bold text-navy mb-4">
+                      Results
+                    </h3>
+                    <p className="text-brown/80 leading-relaxed">
+                      {project.results}
+                    </p>
+                  </div>
+                )}
               </div>
 
-              <div>
+              {/* <div>
                 <h3 className="text-2xl font-bold text-navy mb-6">
                   Behind the Scenes
                 </h3>
@@ -210,7 +244,7 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="space-y-8">
@@ -236,6 +270,28 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
                 </div>
               </div>
 
+              {project.links && project.links.length > 0 && (
+                <div className="bg-white/50 p-8 border border-brown/10">
+                  <h3 className="text-xl font-bold text-navy mb-6">
+                    Links
+                  </h3>
+                  <div className="space-y-3">
+                    {project.links.map(link => (
+                      <a
+                        key={link.label}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between gap-3 text-brown hover:text-gold transition"
+                      >
+                        <span className="font-medium">{link.label}</span>
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <div className="bg-navy text-cream p-8">
                 <h3 className="font-bold text-xl mb-4">
                   Interested in Similar Work?
@@ -244,10 +300,10 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
                   Let’s bring your vision to life.
                 </p>
                 <Button
-                  href="/contact"
                   variant="primary"
                   size="md"
                   fullWidth
+                  onClick={openContactModal}
                   rightIcon={<ArrowRight className="w-4 h-4" />}
                 >
                   Get In Touch

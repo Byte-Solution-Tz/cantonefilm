@@ -27,11 +27,11 @@ export default function WhyChooseUsSection() {
             `}
           >
             {/* Image block */}
-            <div className="relative mb-10">
-              <div className="absolute -bottom-6 -left-6 w-full h-full bg-gold z-0" />
-              <div className="relative z-10 overflow-hidden">
+            <div className="relative mb-10 ">
+              <div className="absolute -bottom-6 -left-6 w-full h-full bg-gold z-0 rounded-2xl" />
+              <div className="relative z-10 overflow-hidden rounded-2xl shadow-lg">
                 <Image
-                  src="/img/commercial-docu.png"
+                  src="/img/about/why-choose-us.webp"
                   alt="Cantone Films impact storytelling"
                   width={800}
                   height={520}
@@ -72,7 +72,7 @@ export default function WhyChooseUsSection() {
             {/* Intro sentence */}
             <p className="text-brown/80 max-w-xl mb-10 leading-relaxed">
               We work at the intersection of storytelling, development communication,
-              and community engagement—helping organizations communicate impact
+              and community engagement, helping organizations communicate impact
               clearly, ethically, and effectively.
             </p>
 
@@ -80,7 +80,7 @@ export default function WhyChooseUsSection() {
             <div className="space-y-10 max-w-xl">
               <WhyItem
                 title="Impact-Focused Storytelling"
-                text="We design stories that raise awareness, communicate measurable outcomes, and inspire positive action—supporting advocacy, education, and development goals."
+                text="We design stories that raise awareness, communicate measurable outcomes, and inspire positive action supporting advocacy, education, and development goals."
               />
 
               <WhyItem
@@ -90,7 +90,7 @@ export default function WhyChooseUsSection() {
 
               <WhyItem
                 title="Professional Production Standards"
-                text="We deliver broadcast-ready content with reliable timelines, clear communication, and high technical quality—meeting institutional and donor expectations."
+                text="We deliver broadcast-ready content with reliable timelines, clear communication, and high technical quality meeting institutional and donor expectations."
               />
 
               

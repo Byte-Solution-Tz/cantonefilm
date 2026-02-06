@@ -10,13 +10,22 @@ export default function Preloader() {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 
-    const timer = setTimeout(() => {
+    const hide = () => {
       setVisible(false);
       document.body.style.overflow = '';
-    }, DURATION);
+    };
+
+    const timer = setTimeout(hide, DURATION);
+
+    if (document.readyState === 'complete') {
+      hide();
+    } else {
+      window.addEventListener('load', hide, { once: true });
+    }
 
     return () => {
       clearTimeout(timer);
+      window.removeEventListener('load', hide);
       document.body.style.overflow = '';
     };
   }, []);

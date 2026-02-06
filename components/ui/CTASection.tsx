@@ -5,6 +5,7 @@ import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
 import { useInView } from '@/hooks/useInView';
 import { ArrowRight, Mail, Phone, MessageCircle } from 'lucide-react';
+import { openContactModal } from '@/components/modals/contactModalEvents';
 
 export default function CTASection() {
   const [ctaRef, ctaInView] = useInView();
@@ -23,7 +24,7 @@ export default function CTASection() {
           }`}
         >
           {/* Main CTA Container */}
-          <div className="relative max-w-6xl mx-auto">
+          <div className="relative max-w-6xl mx-auto rounded-3xl shadow-xl overflow-hidden">
             
             {/* Background pattern overlay */}
             <div className="absolute inset-0 opacity-[0.03]" style={{
@@ -34,11 +35,7 @@ export default function CTASection() {
             {/* Content wrapper with gradient background */}
             <div className="relative bg-gradient-to-br from-navy via-navy/95 to-brown/90 p-10 md:p-16 lg:p-20 overflow-hidden">
               
-              {/* Decorative corner accents */}
-              <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-gold/30 to-transparent" />
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-gold/30 to-transparent" />
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-gold/20 to-transparent" />
-              <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-gold/20 to-transparent" />
+            
 
               {/* Animated shimmer effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/5 to-transparent animate-shimmer" 
@@ -91,9 +88,9 @@ export default function CTASection() {
                   style={{ transitionDelay: '0.5s' }}
                 >
                   <Button
-                    href="/contact"
                     variant="primary"
                     size="md"
+                    onClick={openContactModal}
                     className="hover:scale-105 md:px-8 md:py-4 md:text-lg"
                     rightIcon={
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />

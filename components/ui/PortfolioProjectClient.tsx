@@ -107,7 +107,7 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
               {project.category}
             </span>
 
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-cream mb-6 max-w-5xl leading-tight">
+            <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold text-cream mb-6 max-w-5xl leading-tight">
               {project.title}
             </h1>
 
@@ -228,7 +228,7 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
                 )}
               </div>
 
-              <div>
+              {/* <div>
                 <h3 className="text-2xl font-bold text-navy mb-6">
                   Behind the Scenes
                 </h3>
@@ -244,7 +244,7 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="space-y-8">

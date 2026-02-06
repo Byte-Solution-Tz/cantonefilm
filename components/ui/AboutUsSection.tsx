@@ -87,12 +87,11 @@ export default function AboutUsSection() {
 
             {/* Approach callout */}
             <div className="relative bg-gradient-to-br from-navy to-brown p-8 text-cream rounded-2xl">
-              {/* Corner accent */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-gold/20 to-transparent" />
+              
               
               <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
-                <div className="w-10 h-10 bg-gold/20 flex items-center justify-center">
-                  <Target className="w-5 h-5 text-gold" />
+                <div className="w-10 h-10 bg-gold/20 flex rounded-2xl items-center justify-center">
+                  <Target className="w-5 h-5 text-gold " />
                 </div>
                 Our Approach
               </h3>

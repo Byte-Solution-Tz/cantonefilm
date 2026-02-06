@@ -35,11 +35,7 @@ export default function CTASection() {
             {/* Content wrapper with gradient background */}
             <div className="relative bg-gradient-to-br from-navy via-navy/95 to-brown/90 p-10 md:p-16 lg:p-20 overflow-hidden">
               
-              {/* Decorative corner accents */}
-              <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-gold/30 to-transparent" />
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-gold/30 to-transparent" />
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-gold/20 to-transparent" />
-              <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-gold/20 to-transparent" />
+            
 
               {/* Animated shimmer effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/5 to-transparent animate-shimmer" 

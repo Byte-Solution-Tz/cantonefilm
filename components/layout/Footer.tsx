@@ -29,9 +29,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative text-cyan-100 overflow-hidden">
+    <footer className="relative text-cream overflow-hidden">
       {/* Modern background */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-navy via-brown-dark to-brown" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brown to-gold" />
       <div className="absolute -top-32 -left-24 h-72 w-72 rounded-full bg-gold/10 blur-3xl -z-10" />
       <div className="absolute -bottom-40 right-0 h-96 w-96 rounded-full bg-cream/5 blur-3xl -z-10" />
 
@@ -61,7 +61,7 @@ export default function Footer() {
               {site.tagline}
             </p>
 
-            <div className="grid gap-4 sm:grid-cols-2 text-sm">
+            <div className="grid gap-4 text-sm">
               <a
                 href={`mailto:${site.email}`}
                 className="flex items-center gap-3 text-cream/80 hover:text-gold transition"
@@ -101,7 +101,7 @@ export default function Footer() {
           </div>
 
           {/* CTA Panel */}
-          <div className="relative overflow-hidden rounded-3xl border border-cream/10 bg-gradient-to-br from-navy/60 via-brown/40 to-brown/60 p-8 md:p-10">
+          <div className="relative overflow-hidden rounded-3xl border border-cream/10 bg-gradient-to-br from-brown to-gold p-8 md:p-10">
             <div className="absolute inset-0 opacity-[0.05]" style={{
               backgroundImage:
                 'radial-gradient(circle at 2px 2px, rgba(189, 128, 24, 0.4) 1px, transparent 0)',
@@ -109,7 +109,7 @@ export default function Footer() {
             }} />
             <div className="relative z-10 space-y-6">
               <div>
-                <p className="text-gold text-xs tracking-widest uppercase font-semibold mb-3">
+                <p className="text-cream text-xs tracking-widest uppercase font-semibold mb-3">
                   Ready to collaborate
                 </p>
                 <h3 className="text-2xl md:text-3xl font-bold text-cream leading-tight">

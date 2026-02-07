@@ -26,17 +26,17 @@ export default function PartnersSection() {
           <div className="text-left max-w-3xl mb-16">
             <div className="flex items-center justify-start gap-4 mb-6">
               <span className="w-10 h-px bg-gold" />
-              <span className="text-gold text-xs tracking-widest uppercase font-medium">
+              <span className="text-navy text-xs tracking-widest uppercase font-medium">
                 Trusted By
               </span>
               <span className="w-10 h-px bg-gold" />
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gold mb-4">
               Our Partners
             </h2>
 
-            <p className="text-brown/70 text-lg">
+            <p className="text-navy/70 text-lg">
               We collaborate with organizations shaping communities, policy,
               and positive change across the world.
             </p>

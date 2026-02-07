@@ -103,15 +103,15 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
               Back to Portfolio
             </Link>
 
-            <span className="inline-block px-4 py-2 bg-gold text-navy text-sm font-bold uppercase mb-4 w-fit">
+            <span className="inline-block px-4 py-2 rounded-2xl bg-gold text-navy text-sm font-bold uppercase mb-4 w-fit">
               {project.category}
             </span>
 
-            <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold text-cream mb-6 max-w-5xl leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-5 max-w-5xl leading-tight">
               {project.title}
             </h1>
 
-            <p className="text-xl md:text-2xl text-navy max-w-3xl mb-8">
+            <p className="text-lg md:text-xl text-navy max-w-3xl mb-6">
               {project.excerpt}
             </p>
 
@@ -185,10 +185,10 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
               <div className="space-y-8">
                 {(project.description || project.excerpt) && (
                   <div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
+                    <h2 className="text-2xl md:text-3xl font-bold text-gold mb-3">
                       Project Description
                     </h2>
-                    <p className="text-brown/80 leading-relaxed">
+                    <p className="text-navy/80 leading-relaxed text-base md:text-lg">
                       {project.description ?? project.excerpt}
                     </p>
                   </div>
@@ -196,10 +196,10 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
 
                 {project.goal && (
                   <div>
-                    <h3 className="text-2xl font-bold text-navy mb-4">
+                    <h3 className="text-xl md:text-2xl font-bold text-gold mb-3">
                       Project Goal
                     </h3>
-                    <p className="text-brown/80 leading-relaxed">
+                    <p className="text-navy/80 leading-relaxed text-base md:text-lg">
                       {project.goal}
                     </p>
                   </div>
@@ -207,10 +207,10 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
 
                 {project.approach && (
                   <div>
-                    <h3 className="text-2xl font-bold text-navy mb-4">
+                    <h3 className="text-xl md:text-2xl font-bold text-gold mb-3">
                       Our Approach
                     </h3>
-                    <p className="text-brown/80 leading-relaxed">
+                    <p className="text-navy/80 leading-relaxed text-base md:text-lg">
                       {project.approach}
                     </p>
                   </div>
@@ -218,10 +218,10 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
 
                 {project.results && (
                   <div>
-                    <h3 className="text-2xl font-bold text-navy mb-4">
+                    <h3 className="text-xl md:text-2xl font-bold text-gold mb-3">
                       Results
                     </h3>
-                    <p className="text-brown/80 leading-relaxed">
+                    <p className="text-navy/80 leading-relaxed text-base md:text-lg">
                       {project.results}
                     </p>
                   </div>
@@ -248,8 +248,8 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
             </div>
 
             <div className="space-y-8">
-              <div className="bg-white/50 p-8 border border-brown/10">
-                <h3 className="text-xl font-bold text-navy mb-6">
+              <div className="bg-white/50 rounded-2xl p-8 border border-brown/10">
+                <h3 className="text-lg md:text-xl font-bold text-gold mb-4">
                   Project Details
                 </h3>
                 <div className="space-y-4">
@@ -271,8 +271,8 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
               </div>
 
               {project.links && project.links.length > 0 && (
-                <div className="bg-white/50 p-8 border border-brown/10">
-                  <h3 className="text-xl font-bold text-navy mb-6">
+                <div className="bg-white/50 rounded-2xl p-8 border border-brown/10">
+                  <h3 className="text-lg md:text-xl font-bold text-gold mb-4">
                     Links
                   </h3>
                   <div className="space-y-3">
@@ -292,11 +292,11 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
                 </div>
               )}
 
-              <div className="bg-navy text-cream p-8">
-                <h3 className="font-bold text-xl mb-4">
+              <div className="bg-gradient-to-br rounded-2xl from-brown to-gold text-cream p-8">
+                <h3 className="font-bold text-lg md:text-xl mb-3 text-cream">
                   Interested in Similar Work?
                 </h3>
-                <p className="text-cream/80 mb-6">
+                <p className="text-cream mb-5 text-sm md:text-base">
                   Let’s bring your vision to life.
                 </p>
                 <Button
@@ -318,7 +318,7 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
       {relatedProjects.length > 0 && (
         <Section className="py-24 bg-white/30">
           <Container>
-            <h2 className="text-3xl font-bold text-navy mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gold mb-10">
               Related Projects
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
@@ -332,8 +332,8 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
                       className="object-cover hover:scale-110 transition"
                     />
                   </div>
-                  <h3 className="font-bold text-navy">{p.title}</h3>
-                  <p className="text-brown/70 text-sm">{p.category}</p>
+                  <h3 className="font-bold text-gold text-base md:text-lg">{p.title}</h3>
+                  <p className="text-navy/70 text-xs md:text-sm">{p.category}</p>
                 </Link>
               ))}
             </div>
@@ -348,7 +348,7 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
             {previousProject ? (
               <Link
                 href={`/portfolio/${previousProject.slug}`}
-                className="flex items-center gap-3 text-brown hover:text-gold"
+                className="flex items-center gap-3 text-gold hover:text-brown"
               >
                 <ArrowLeft className="w-5 h-5" />
                 {previousProject.title}
@@ -358,7 +358,7 @@ export default function PortfolioProjectClient({ slug }: { slug: string }) {
             {nextProject ? (
               <Link
                 href={`/portfolio/${nextProject.slug}`}
-                className="flex items-center gap-3 text-brown hover:text-gold"
+                className="flex items-center gap-3 text-gold hover:text-brown"
               >
                 {nextProject.title}
                 <ArrowRight className="w-5 h-5" />

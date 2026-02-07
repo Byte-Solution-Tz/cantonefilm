@@ -21,7 +21,7 @@ const baseClassName =
   "group inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/40 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent disabled:opacity-50 disabled:pointer-events-none";
 
 const variantClassNames = {
-  primary: "bg-gold text-navy hover:bg-gold/90 shadow-sm hover:shadow-md",
+  primary: "bg-gold text-cream hover:bg-gold/90 shadow-sm hover:shadow-md",
   secondary: "bg-navy text-cream hover:bg-navy/90 shadow-sm hover:shadow-md",
   outline: "border-2 border-navy text-navy hover:bg-navy hover:text-cream",
   "outline-light": "border-2 border-cream text-cream hover:bg-cream hover:text-navy",

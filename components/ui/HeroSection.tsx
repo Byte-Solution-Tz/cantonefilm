@@ -61,22 +61,23 @@ export default function CantoneFilmsHero() {
             <div className="w-full lg:w-1/2 xl:w-7/12">
 
               <div className="mb-8 md:mb-12">
-                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-7xl font-bold text-amber-950 leading-[0.95] mb-6 animate-slideUp">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-6xl font-bold text-gold leading-[0.95] mb-6 animate-slideUp">
                   Impact-Driven Film
                   
-                  <span className="relative inline-block">
+                  
+                  
+                  & Multimedia Production Company in Tanzania
+                </h1>
+                <span className="relative inline-block">
                     
                     <span
                       className={`absolute -left-6 md:-left-12 lg:-left-24 bottom-2 md:bottom-4 h-1 md:h-2 bg-gold transition-all duration-[1500ms] ease-out ${
                         lineAnimation
-                          ? 'w-[calc(100%+1.5rem)] md:w-[calc(100%+3rem)] lg:w-[calc(100%+6rem)]'
+                          ? 'w-[calc(100%+6rem)] md:w-[calc(100%+12rem)] lg:w-[calc(100%+12rem)]'
                           : 'w-0'
                       }`}
                     />
                   </span>
-                  <br />
-                  & Video Production Company in Tanzania
-                </h1>
               </div>
 
               <div className="overflow-hidden mb-6 md:mb-12">
@@ -85,9 +86,9 @@ export default function CantoneFilmsHero() {
                   style={{ animationDelay: '0.3s' }}
                 >
                   We create powerful documentaries, corporate films, and creative visual stories that communicate
-                  <span className="text-gold font-medium"> impact</span>,
-                  <span className="text-gold font-medium"> inspire action</span>, and strengthen 
-                  <span className="text-gold font-medium"> community</span> engagement.
+                  <span className="text-brown font-medium"> impact</span>,
+                  <span className="text-brown font-medium"> inspire action</span>, and strengthen 
+                  <span className="text-brown font-medium"> community</span> engagement.
                 </p>
               </div>
 

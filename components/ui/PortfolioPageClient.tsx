@@ -41,19 +41,19 @@ export default function PortfolioPageClient() {
           >
             <div className="flex justify-start items-center gap-3 mb-6">
               <span className="w-12 h-px bg-gold" />
-              <span className="text-gold tracking-widest text-sm uppercase">
+              <span className="text-navy tracking-widest text-sm uppercase">
                 Our Work
               </span>
               <span className="w-12 h-px bg-gold" />
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gold mb-6">
               Stories That
               <br />
               <span className="text-brown">Inspire Change</span>
             </h1>
 
-            <p className="text-xl text-brown/80 max-w-3xl">
+            <p className="text-xl text-navy/80 max-w-3xl">
               A curated selection of visual stories crafted for impact,
               education, and global audiences.
             </p>
@@ -112,7 +112,7 @@ export default function PortfolioPageClient() {
                   </div>
 
                   <div className="absolute bottom-0 p-6">
-                    <h3 className="text-xl font-bold text-cream">
+                    <h3 className="text-xl font-bold text-gold">
                       {project.title}
                     </h3>
                     <p className="text-cream/70 text-sm">{project.category}</p>

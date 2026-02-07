@@ -34,12 +34,12 @@ export default function PortfolioSection() {
             <div className="lg:sticky lg:top-32 space-y-8 max-w-md">
               <div className="flex items-center gap-3">
                 <span className="w-10 h-px bg-gold" />
-                <span className="text-gold tracking-widest text-xs uppercase font-medium">
+                <span className="text-navy tracking-widest text-xs uppercase font-medium">
                   Featured Work
                 </span>
               </div>
 
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy leading-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gold leading-tight">
                 Selected <br />
                 <span className="text-brown">Projects</span>
               </h2>
@@ -48,7 +48,7 @@ export default function PortfolioSection() {
 
 
 
-              <p className="text-base md:text-lg text-brown/80 leading-relaxed">
+              <p className="text-base md:text-lg text-navy/80 leading-relaxed">
                 Our portfolio includes impact documentaries,
                 community-based storytelling, and corporate
                 communication projects that highlight social
@@ -71,7 +71,7 @@ export default function PortfolioSection() {
                 View All Works
               </Button>
 
-              <p className="text-xs text-brown/60 italic">
+              <p className="text-xs text-navy/60 italic">
                 Hover a project to explore
               </p>
             </div>
@@ -125,7 +125,7 @@ export default function PortfolioSection() {
                     <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
                       <div className="flex items-end justify-between gap-3">
                         <div>
-                          <h3 className="text-cream font-medium text-sm md:text-base leading-tight">
+                          <h3 className="text-gold font-medium text-sm md:text-base leading-tight">
                             {item.title}
                           </h3>
                           <span className="text-cream/70 text-xs">

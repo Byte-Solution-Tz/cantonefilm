@@ -39,19 +39,19 @@ export default function ServicesOverviewSection() {
         >
           <div className="flex items-center justify-start gap-3 mb-6">
             <div className="w-12 h-px bg-gold" />
-            <span className="text-gold text-sm uppercase tracking-widest font-medium">
+            <span className="text-navy text-sm uppercase tracking-widest font-medium">
               What We Offer
             </span>
             <div className="w-12 h-px bg-gold" />
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-6 leading-tight">
-            OUR SERVICES
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gold mb-6 leading-tight">
+            Our Services
             <br />
             
           </h2>
 
-          <p className="text-xl text-brown/80 leading-relaxed max-w-3xl">
+          <p className="text-xl text-navy/80 leading-relaxed max-w-3xl">
             We provide end-to-end media production services—helping organizations communicate impact, tell meaningful stories, and engage audiences through powerful visual storytelling.
           </p>
         </div>
@@ -84,7 +84,7 @@ export default function ServicesOverviewSection() {
           }`}
           style={{ transitionDelay: '0.6s' }}
         >
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-navy via-navy/98 to-brown/90 p-10 md:p-14">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brown to-gold p-10 md:p-14">
             {/* Decorative pattern */}
             <div 
               className="absolute inset-0 opacity-5"
@@ -103,8 +103,8 @@ export default function ServicesOverviewSection() {
                 <h3 className="text-3xl md:text-4xl font-bold text-cream mb-4">
                   Not Sure Which Service You Need?
                 </h3>
-                <p className="text-cream/80 text-lg leading-relaxed">
-                  Every project is unique. Let&apos;s discuss your goals and find the perfect solution for your story.
+                <p className="text-cream text-lg leading-relaxed">
+                  Every project is unique, let&apos;s discuss your goals and find the perfect approach to communicate your project
                 </p>
               </div>
               

@@ -52,27 +52,27 @@ export default function CTASection() {
                   style={{ transitionDelay: '0.2s' }}
                 >
                   <div className="w-12 h-px bg-gold/50" />
-                  <span className="text-gold font-medium tracking-widest text-sm uppercase">
-                    Let's Create Together
+                  <span className="text-white font-medium tracking-widest text-sm uppercase">
+                    Let&apos;s Create Together
                   </span>
                   <div className="w-12 h-px bg-gold/50" />
                 </div>
 
                 {/* Main heading */}
                 <h2 
-                  className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-cream leading-tight transition-all duration-1000 ${
+                  className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gold leading-tight transition-all duration-1000 ${
                     ctaInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                   style={{ transitionDelay: '0.3s' }}
                 >
                   Ready to Communicate
                   <br />
-                  <span className="text-gold">Your Story?</span>
+                  <span className="text-brown">Your Story?</span>
                 </h2>
 
                 {/* Description */}
                 <p 
-                  className={`text-lg md:text-xl text-cream/80 mb-10 max-w-2xl leading-relaxed transition-all duration-1000 ${
+                  className={`text-lg md:text-xl text-white mb-10 max-w-2xl leading-relaxed transition-all duration-1000 ${
                     ctaInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                   style={{ transitionDelay: '0.4s' }}

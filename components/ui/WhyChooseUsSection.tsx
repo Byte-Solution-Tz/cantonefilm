@@ -58,19 +58,19 @@ export default function WhyChooseUsSection() {
             {/* Label */}
             <div className="flex items-center gap-3 mb-6">
               <span className="w-10 h-px bg-gold" />
-              <span className="text-gold text-xs tracking-widest uppercase font-medium">
+              <span className="text-navy text-xs tracking-widest uppercase font-medium">
                 Why Choose Us
               </span>
             </div>
 
             {/* Heading */}
-            <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-gold mb-6 leading-tight">
               Why <br />
               <span className="text-brown">Choose Cantone Films</span>
             </h2>
 
             {/* Intro sentence */}
-            <p className="text-brown/80 max-w-xl mb-10 leading-relaxed">
+            <p className="text-navy/80 max-w-xl mb-10 leading-relaxed">
               We work at the intersection of storytelling, development communication,
               and community engagement, helping organizations communicate impact
               clearly, ethically, and effectively.
@@ -106,10 +106,10 @@ export default function WhyChooseUsSection() {
 function WhyItem({ title, text }: { title: string; text: string }) {
   return (
     <div>
-      <h3 className="text-lg md:text-xl font-semibold text-navy mb-2">
+      <h3 className="text-lg md:text-xl font-semibold text-gold mb-2">
         {title}
       </h3>
-      <p className="text-brown/80 leading-relaxed text-base md:text-lg">
+      <p className="text-navy/80 leading-relaxed text-base md:text-lg">
         {text}
       </p>
     </div>

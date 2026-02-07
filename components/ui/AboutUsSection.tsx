@@ -28,14 +28,14 @@ export default function AboutUsSection() {
           {/* Section Label */}
           <div className="flex items-center justify-start gap-3 mb-6">
             <div className="w-12 h-px bg-gold" />
-            <span className="text-gold text-sm uppercase tracking-widest font-medium">
+            <span className="text-navy text-sm uppercase tracking-widest font-medium">
               About Cantone Films
             </span>
             <div className="w-12 h-px bg-gold" />
           </div>
 
           {/* Heading */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gold mb-6 leading-tight">
             Stories That Drive
             <br />
             <span className="text-brown">Real Change</span>
@@ -73,7 +73,7 @@ export default function AboutUsSection() {
             {/* Main narrative */}
             <div className="space-y-6 text-navy/90 text-lg leading-relaxed">
               <p className="text-xl font-medium text-navy">
-                <strong className="text-gold">Cantone Films</strong> is a creative media production company providing professional film, video, and multimedia services across Tanzania and beyond.
+                <strong className="text-brown">Cantone Films</strong> is a creative media production company providing professional film, video, and multimedia services across Tanzania and beyond.
               </p>
 
               <p>
@@ -81,7 +81,7 @@ export default function AboutUsSection() {
               </p>
 
               <p>
-                Every project we undertake is grounded in <span className="font-semibold text-gold">purpose</span>-designed not just to look beautiful, but to inform, inspire, and leave a lasting impact on communities.
+                Every project we undertake is grounded in <span className="font-semibold text-brown">purpose</span>-designed not just to look beautiful, but to inform, inspire, and leave a lasting impact on communities.
               </p>
             </div>
 
@@ -89,7 +89,7 @@ export default function AboutUsSection() {
             <div className="relative bg-gradient-to-br from-navy to-brown p-8 text-cream rounded-2xl">
               
               
-              <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
+              <h3 className="text-2xl font-bold mb-4 flex items-center gap-3 text-gold">
                 <div className="w-10 h-10 bg-gold/20 flex rounded-2xl items-center justify-center">
                   <Target className="w-5 h-5 text-gold " />
                 </div>
@@ -101,7 +101,7 @@ export default function AboutUsSection() {
               </p>
 
               <p className="text-cream/90 leading-relaxed">
-                Our work is driven by <span className="text-gold font-medium">cultural sensitivity</span>, strong research, and cinematic craftsmanship, ensuring every story is told with authenticity, respect, and depth.
+                Our work is driven by <span className="text-brown font-medium">cultural sensitivity</span>, strong research, and cinematic craftsmanship, ensuring every story is told with authenticity, respect, and depth.
               </p>
 
               {/* Decorative line */}

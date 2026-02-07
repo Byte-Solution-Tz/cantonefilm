@@ -73,12 +73,12 @@ export default function ServiceCard({
           </div>
 
           {/* Title with gradient on hover */}
-          <h3 className="font-bold text-2xl mb-4 text-navy leading-tight group-hover:text-gold transition-colors duration-300">
+          <h3 className="font-bold text-2xl mb-4 text-gold leading-tight transition-colors duration-300">
             {title}
           </h3>
 
           {/* Description */}
-          <p className="text-brown/80 leading-relaxed mb-6 flex-grow">
+          <p className="text-navy/80 leading-relaxed mb-6 flex-grow">
             {description}
           </p>
 

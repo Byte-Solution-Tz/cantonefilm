@@ -39,19 +39,19 @@ export default function ServicesOverviewSection() {
         >
           <div className="flex items-center justify-start gap-3 mb-6">
             <div className="w-12 h-px bg-gold" />
-            <span className="text-gold text-sm uppercase tracking-widest font-medium">
+            <span className="text-navy text-sm uppercase tracking-widest font-medium">
               What We Offer
             </span>
             <div className="w-12 h-px bg-gold" />
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gold mb-6 leading-tight">
             OUR SERVICES
             <br />
             
           </h2>
 
-          <p className="text-xl text-brown/80 leading-relaxed max-w-3xl">
+          <p className="text-xl text-navy/80 leading-relaxed max-w-3xl">
             We provide end-to-end media production services—helping organizations communicate impact, tell meaningful stories, and engage audiences through powerful visual storytelling.
           </p>
         </div>
@@ -100,10 +100,10 @@ export default function ServicesOverviewSection() {
 
             <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
               <div className="text-left max-w-2xl">
-                <h3 className="text-3xl md:text-4xl font-bold text-cream mb-4">
+                <h3 className="text-3xl md:text-4xl font-bold text-gold mb-4">
                   Not Sure Which Service You Need?
                 </h3>
-                <p className="text-cream/80 text-lg leading-relaxed">
+                <p className="text-white  text-lg leading-relaxed">
                   Every project is unique. Let&apos;s discuss your goals and find the perfect solution for your story.
                 </p>
               </div>

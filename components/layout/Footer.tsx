@@ -109,10 +109,10 @@ export default function Footer() {
             }} />
             <div className="relative z-10 space-y-6">
               <div>
-                <p className="text-gold text-xs tracking-widest uppercase font-semibold mb-3">
+                <p className="text-white text-xs tracking-widest uppercase font-semibold mb-3">
                   Ready to collaborate
                 </p>
-                <h3 className="text-2xl md:text-3xl font-bold text-cream leading-tight">
+                <h3 className="text-2xl md:text-3xl font-bold text-gold leading-tight">
                   Let&apos;s shape a story that lasts.
                 </h3>
               </div>

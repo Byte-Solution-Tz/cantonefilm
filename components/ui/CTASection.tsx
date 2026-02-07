@@ -33,7 +33,7 @@ export default function CTASection() {
             }} />
 
             {/* Content wrapper with gradient background */}
-            <div className="relative bg-gradient-to-br from-navy via-navy/95 to-brown/90 p-10 md:p-16 lg:p-20 overflow-hidden">
+            <div className="relative bg-gradient-to-br from-brown to-gold p-10 md:p-16 lg:p-20 overflow-hidden">
               
             
 
@@ -52,7 +52,7 @@ export default function CTASection() {
                   style={{ transitionDelay: '0.2s' }}
                 >
                   <div className="w-12 h-px bg-gold/50" />
-                  <span className="text-white font-medium tracking-widest text-sm uppercase">
+                  <span className="text-cream font-medium tracking-widest text-sm uppercase">
                     Let&apos;s Create Together
                   </span>
                   <div className="w-12 h-px bg-gold/50" />
@@ -60,19 +60,19 @@ export default function CTASection() {
 
                 {/* Main heading */}
                 <h2 
-                  className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gold leading-tight transition-all duration-1000 ${
+                  className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-cream leading-tight transition-all duration-1000 ${
                     ctaInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                   style={{ transitionDelay: '0.3s' }}
                 >
                   Ready to Communicate
                   <br />
-                  <span className="text-brown">Your Story?</span>
+                  <span className="text-gold">Your Project?</span>
                 </h2>
 
                 {/* Description */}
                 <p 
-                  className={`text-lg md:text-xl text-white mb-10 max-w-2xl leading-relaxed transition-all duration-1000 ${
+                  className={`text-lg md:text-xl text-cream mb-10 max-w-2xl leading-relaxed transition-all duration-1000 ${
                     ctaInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                   style={{ transitionDelay: '0.4s' }}
@@ -121,7 +121,7 @@ export default function CTASection() {
             </div>
 
             {/* 3D shadow effect */}
-            <div className="absolute inset-0 -z-10 translate-y-2 translate-x-2 bg-gradient-to-br from-navy/40 to-brown/40 blur-xl" />
+            <div className="absolute inset-0 -z-10 translate-y-2 translate-x-2 bg-gradient-to-br from-brown/40 to-gold/40 blur-xl" />
           </div>
 
           {/* Testimonial or trust indicator (optional) */}

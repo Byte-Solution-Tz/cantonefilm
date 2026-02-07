@@ -65,7 +65,7 @@ export default function CantoneFilmsHero() {
                   Impact-Driven Film
                   
                   
-                  <br />
+                  
                   & Multimedia Production Company in Tanzania
                 </h1>
                 <span className="relative inline-block">

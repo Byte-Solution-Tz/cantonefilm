@@ -71,37 +71,37 @@ export default function AboutUsSection() {
           {/* Right – Content */}
           <div className="space-y-8">
             {/* Main narrative */}
-            <div className="space-y-6 text-navy/90 text-lg leading-relaxed">
-              <p className="text-xl font-medium text-navy">
-                <strong className="text-brown">Cantone Films</strong> is a creative media production company providing professional film, video, and multimedia services across Tanzania and beyond.
+            <div className="space-y-6 text-navy text-lg leading-relaxed font-normal">
+              <p className="text-xl text-navy">
+                Cantone Films is a creative media production company providing professional film, video, and multimedia services across Tanzania and beyond.
               </p>
 
               <p>
                 We work with organizations, institutions, and brands to document programs, share success stories, and communicate meaningful change through visual storytelling.
               </p>
 
-              <p>
-                Every project we undertake is grounded in <span className="font-semibold text-brown">purpose</span>-designed not just to look beautiful, but to inform, inspire, and leave a lasting impact on communities.
+              <p className="text-navy">
+                Every project we undertake is grounded in purpose-designed not just to look beautiful, but to inform, inspire, and leave a lasting impact on communities.
               </p>
             </div>
 
             {/* Approach callout */}
-            <div className="relative bg-gradient-to-br from-navy to-brown p-8 text-cream rounded-2xl">
+            <div className="relative bg-gradient-to-br from-brown to-gold p-8 rounded-2xl">
               
               
-              <h3 className="text-2xl font-bold mb-4 flex items-center gap-3 text-gold">
+              <h3 className="text-2xl font-bold mb-4 flex items-center gap-3 text-cream">
                 <div className="w-10 h-10 bg-gold/20 flex rounded-2xl items-center justify-center">
-                  <Target className="w-5 h-5 text-gold " />
+                  <Target className="w-5 h-5 text-gold" />
                 </div>
                 Our Approach
               </h3>
 
-              <p className="text-cream/90 leading-relaxed mb-4">
+              <p className="text-cream leading-relaxed mb-4 font-normal">
                 We believe that powerful stories can educate, mobilize communities, and influence positive development outcomes.
               </p>
 
-              <p className="text-cream/90 leading-relaxed">
-                Our work is driven by <span className="text-brown font-medium">cultural sensitivity</span>, strong research, and cinematic craftsmanship, ensuring every story is told with authenticity, respect, and depth.
+              <p className="text-cream leading-relaxed font-normal">
+                Our work is driven by cultural sensitivity, strong research, and cinematic craftsmanship, ensuring every story is told with authenticity, respect, and depth.
               </p>
 
               {/* Decorative line */}

@@ -1,4 +1,5 @@
-'use client';
+"use client";
+
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -21,6 +22,9 @@ export default function Header() {
   const [activeLink, setActiveLink] = useState("home");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  /* ===============================
+     Scroll Effect
+  =============================== */
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -30,193 +34,208 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  /* ===============================
+     Intersection Observer
+  =============================== */
   useEffect(() => {
     const sectionIds = navItems.map((item) => item.id);
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter((section): section is HTMLElement => Boolean(section));
 
-    if (sections.length === 0) return;
+    if (!sections.length) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
-        const visibleEntries = entries
+        const visible = entries
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
 
-        if (visibleEntries.length > 0) {
-          const id = visibleEntries[0].target.getAttribute("id");
+        if (visible.length) {
+          const id = visible[0].target.getAttribute("id");
           if (id) setActiveLink(id);
         }
       },
       {
         root: null,
         rootMargin: "0px 0px -40% 0px",
-        threshold: [0.1, 0.25, 0.5, 0.75],
+        threshold: [0.25, 0.5, 0.75],
       }
     );
 
     sections.forEach((section) => observer.observe(section));
-
     return () => observer.disconnect();
   }, []);
 
+  /* ===============================
+     Contact Modal Event Listener
+  =============================== */
   useEffect(() => {
     const handleOpen = () => setIsModalOpen(true);
     window.addEventListener(CONTACT_MODAL_EVENT, handleOpen);
     return () => window.removeEventListener(CONTACT_MODAL_EVENT, handleOpen);
   }, []);
 
-  // Close mobile menu when clicking outside
+  /* ===============================
+     Lock Body Scroll When Menu Open
+  =============================== */
   useEffect(() => {
     if (isMobileMenuOpen || isModalOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.classList.add("overflow-hidden");
     } else {
-      document.body.style.overflow = "unset";
+      document.body.classList.remove("overflow-hidden");
     }
   }, [isMobileMenuOpen, isModalOpen]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-cream/95 backdrop-blur-md shadow-lg border-b border-brown/20"
-          : "bg-cream/95 backdrop-blur-md border-b border-brown/10"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 md:py-4 flex justify-between items-center">
-        {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-3 group"
-          onClick={() => setActiveLink("/")}
-        >
-          <div className="relative h-12 w-40 md:h-14 md:w-48 overflow-hidden">
-            <Image
-              src="/LogoCantone–Alpha.webp"
-              alt="Cantone Films logo"
-              fill
-              className="object-contain scale-90 origin-center"
-              priority
-            />
-            <div className="absolute inset-0 bg-gold/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
-          {/* <span className="text-navy font-bold text-lg md:text-xl tracking-wide group-hover:text-gold transition-colors duration-300">
-            Cantone Films
-          </span> */}
-        </Link>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setActiveLink(item.id)}
-              className={`relative text-sm font-medium transition-colors duration-300 group ${
-                activeLink === item.id ? "text-gold" : "text-navy hover:text-gold"
-              }`}
-            >
-              {item.label}
-              <span
-                className={`absolute -bottom-1 left-0 h-0.5 bg-gold transition-all duration-300 ${
-                  activeLink === item.id ? "w-full" : "w-0 group-hover:w-full"
-                }`}
-              />
-            </Link>
-          ))}
-          
-          {/* CTA Button */}
-          <ContactButton
-            variant="primary"
-            size="sm"
-            onClick={() => setIsModalOpen(true)}
-          />
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <Button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          variant="ghost"
-          size="icon"
-          className="md:hidden h-11 w-11 text-navy border border-brown/20 bg-cream/80 hover:text-gold hover:border-gold"
-          ariaLabel="Toggle menu"
-        >
-          {isMobileMenuOpen ? (
-            <X className="w-7 h-7" />
-          ) : (
-            <Menu className="w-7 h-7" />
-          )}
-        </Button>
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        className={`md:hidden fixed inset-0 z-50 bg-navy bg-opacity-95 backdrop-blur-lg transition-all duration-500 ${
-          isMobileMenuOpen
-            ? "opacity-100 visible"
-            : "opacity-0 invisible"
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          isScrolled
+            ? "bg-cream/95 backdrop-blur-md shadow-lg border-b border-brown/20"
+            : "bg-cream/95 backdrop-blur-md border-b border-brown/10"
         }`}
       >
-        <div className="absolute top-4 right-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative h-12 w-40 md:h-14 md:w-48">
+              <Image
+                src="/LogoCantone–Alpha.webp"
+                alt="Cantone Films logo"
+                fill
+                className="object-contain scale-90"
+                priority
+              />
+            </div>
+          </Link>
+
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.id}
+                href={item.href}
+                onClick={() => setActiveLink(item.id)}
+                className={`relative text-sm font-medium transition-colors duration-300 group ${
+                  activeLink === item.id
+                    ? "text-gold"
+                    : "text-navy hover:text-gold"
+                }`}
+              >
+                {item.label}
+                <span
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-gold transition-all duration-300 ${
+                    activeLink === item.id
+                      ? "w-full"
+                      : "w-0 group-hover:w-full"
+                  }`}
+                />
+              </Link>
+            ))}
+
+            <ContactButton
+              variant="primary"
+              size="sm"
+              onClick={() => setIsModalOpen(true)}
+            />
+          </nav>
+
+          {/* Mobile Toggle */}
           <Button
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
             variant="ghost"
             size="icon"
-            className="h-11 w-11 text-cream border border-cream/20 hover:border-gold hover:text-gold"
-            ariaLabel="Close menu"
+            className="md:hidden h-11 w-11 text-navy border border-brown/20 bg-cream/80 hover:text-gold hover:border-gold"
+            ariaLabel="Toggle menu"
           >
-            <X className="w-7 h-7" />
+            {isMobileMenuOpen ? (
+              <X className="w-7 h-7" />
+            ) : (
+              <Menu className="w-7 h-7" />
+            )}
           </Button>
         </div>
+      </header>
 
-        <nav className="relative flex flex-col items-center justify-start h-full gap-7 px-6 pt-24 pb-10 overflow-y-auto">
-          <div className="absolute inset-x-4 top-20 bottom-6 rounded-3xl bg-cream/5 border border-cream/10 backdrop-blur-sm" />
-          <div className="relative w-full max-w-sm mx-auto flex flex-col items-center gap-7 py-8">
-          {navItems.map((item, idx) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => {
-                setActiveLink(item.id);
-                setIsMobileMenuOpen(false);
-              }}
-              className={`text-2xl font-semibold transition-all duration-300 transform ${
-                isMobileMenuOpen
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-4 opacity-0"
-              } ${activeLink === item.id ? "text-gold" : "text-cream hover:text-gold"}`}
-              style={{
-                transitionDelay: isMobileMenuOpen ? `${idx * 50}ms` : "0ms",
-              }}
+      {/* ===============================
+           MOBILE MENU
+      =============================== */}
+      <div
+        className={`md:hidden fixed inset-0 z-[70] ${
+          isMobileMenuOpen ? "pointer-events-auto" : "pointer-events-none"
+        }`}
+      >
+        {/* Overlay */}
+        <div
+          className={`absolute inset-0 bg-black/60 transition-opacity duration-300 ${
+            isMobileMenuOpen ? "opacity-100" : "opacity-0"
+          }`}
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+
+        {/* Drawer */}
+        <div
+          className={`absolute right-0 top-0 h-full w-[82vw] max-w-sm bg-cream border-l border-brown/20 z-10 transform transition-transform duration-300 ${
+            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <div className="flex items-center justify-between px-6 py-5 border-b border-brown/20">
+            <span className="text-navy text-sm tracking-[0.3em]">
+              MENU
+            </span>
+            <Button
+              onClick={() => setIsMobileMenuOpen(false)}
+              variant="ghost"
+              size="icon"
+              className="h-11 w-11 text-navy border border-brown/30 hover:border-gold hover:text-gold"
+              ariaLabel="Close menu"
             >
-              {item.label}
-            </Link>
-          ))}
-          
-          {/* Mobile CTA */}
-          <ContactButton
-            variant="primary"
-            size="md"
-            fullWidth
-            className={`mt-4 transition-all duration-300 transform ${
-              isMobileMenuOpen
-                ? "translate-y-0 opacity-100"
-                : "translate-y-4 opacity-0"
-            }`}
-            onClick={() => {
-              setIsMobileMenuOpen(false);
-              setIsModalOpen(true);
-            }}
-            label="Let's Talk"
-          />
+              <X className="w-7 h-7" />
+            </Button>
           </div>
-        </nav>
+
+          <nav className="flex flex-col gap-3 px-6 py-6 overflow-y-auto h-[calc(100%-76px)]">
+            {navItems.map((item) => (
+              <Link
+                key={item.id}
+                href={item.href}
+                onClick={() => {
+                  setActiveLink(item.id);
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`flex items-center justify-between rounded-2xl px-4 py-4 text-lg font-semibold transition-colors duration-200 ${
+                  activeLink === item.id
+                    ? "bg-navy/10 text-gold"
+                    : "text-navy hover:bg-navy/5 hover:text-gold"
+                }`}
+              >
+                {item.label}
+                <span className="text-xs tracking-[0.3em] text-brown/60">
+                  •
+                </span>
+              </Link>
+            ))}
+
+            <ContactButton
+              variant="primary"
+              size="md"
+              fullWidth
+              className="mt-3"
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                setIsModalOpen(true);
+              }}
+              label="Let's Talk"
+            />
+          </nav>
+        </div>
       </div>
-      <ContactModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
+
+      <ContactModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
       />
-    </header>
+    </>
   );
 }

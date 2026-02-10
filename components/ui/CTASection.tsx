@@ -37,9 +37,7 @@ export default function CTASection() {
               
             
 
-              {/* Animated shimmer effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/5 to-transparent animate-shimmer" 
-                   style={{ backgroundSize: '200% 100%' }} />
+              
 
               {/* Content */}
               <div className="relative z-10 text-left max-w-4xl">
@@ -77,7 +75,7 @@ export default function CTASection() {
                   }`}
                   style={{ transitionDelay: '0.4s' }}
                 >
-                  Let's work together to create meaningful visual impact that resonates with your audience and drives real change.
+                  Let&apos;s work together to create meaningful visual impact that resonates with your audience and drives real change.
                 </p>
 
                 {/* CTA Buttons */}
@@ -129,7 +127,7 @@ export default function CTASection() {
         </div>
       </Container>
 
-      <style jsx>{`
+      {/* <style jsx>{`
         @keyframes shimmer {
           0% { background-position: -200% 0; }
           100% { background-position: 200% 0; }
@@ -138,7 +136,7 @@ export default function CTASection() {
         .animate-shimmer {
           animation: shimmer 8s infinite linear;
         }
-      `}</style>
+      `}</style> */}
     </Section>
   );
 }

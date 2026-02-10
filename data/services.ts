@@ -2,17 +2,17 @@
 
 export const services = [
   {
-    id: 'film-video-production',
-    title: 'Film, TV & Video Production',
-    backgroundTitle: 'FILM & VIDEO',
+    id: 'film-documentary-media-production',
+    title: 'Film, Documentary, and Media Production',
+    backgroundTitle: 'PRODUCTION',
     description:
-      'We produce documentaries, corporate films, commercials, social media content, and narrative films using professional crews and cinematic techniques to deliver visually powerful stories.',
+      'We produce high-quality documentaries and films that capture real stories, programs, and experiences. From planning and filming to final delivery, we create clear, engaging visual content that communicates purpose and impact.',
     image: '/img/portfolio/documentary-banner.png',
     features: [
       'Documentary & Corporate Films',
-      'Commercials & Social Media Content',
-      'Narrative & TV Productions',
+      'Field & Studio Production',
       'Professional Crews & Equipment',
+      'End-to-End Delivery',
     ],
     cta: {
       label: 'View Film Projects',
@@ -21,17 +21,17 @@ export const services = [
   },
 
   {
-    id: 'story-creative-development',
-    title: 'Story & Creative Development',
+    id: 'story-development-visual-strategy',
+    title: 'Story Development & Visual Strategy',
     backgroundTitle: 'STORY',
     description:
-      'Our team supports research, concept creation, scriptwriting, storyboarding, and production planning to ensure each project begins with a clear and compelling narrative.',
+      'Strong stories begin with clarity. We support projects through research, concept development, scripting, and visual planning to align each film with communication goals, audience needs, and real-world context.',
     image: '/img/portfolio/left-documentary-banner.png',
     features: [
       'Research & Concept Development',
-      'Scriptwriting',
-      'Storyboarding',
-      'Production Planning',
+      'Scripting & Storyboarding',
+      'Visual Planning',
+      'Production Strategy',
     ],
     cta: {
       label: 'Explore Our Process',
@@ -40,59 +40,21 @@ export const services = [
   },
 
   {
-    id: 'post-production',
-    title: 'Post-Production & Visual Enhancement',
+    id: 'post-production-content-delivery',
+    title: 'Post-Production & Content Delivery',
     backgroundTitle: 'POST',
     description:
-      'We provide professional editing, sound design, color grading, subtitles, and motion graphics to deliver polished content ready for broadcast, events, and digital platforms.',
+      'We transform raw footage into polished, professional films through editing, sound design, color grading, and formatting for digital platforms, presentations, reporting, and broadcast use.',
     image: '/img/portfolio/documentary-banner.png',
     features: [
       'Editing & Sound Design',
       'Color Grading',
       'Subtitles & Accessibility',
-      'Motion Graphics',
+      'Delivery for Web & Broadcast',
     ],
     cta: {
       label: 'See Post-Production Work',
       href: '/services/post-production',
-    },
-  },
-
-  {
-    id: 'photography-multimedia',
-    title: 'Photography & Multimedia',
-    backgroundTitle: 'PHOTOGRAPHY',
-    description:
-      'We capture high-quality photography and multimedia assets for reports, campaigns, and digital communication, ensuring visual consistency and storytelling impact.',
-    image: '/img/portfolio/left-documentary-banner.png',
-    features: [
-      'Professional Photography',
-      'Campaign & Report Assets',
-      'Digital & Print Use',
-      'Visual Consistency',
-    ],
-    cta: {
-      label: 'View Photography',
-      href: '/services/photography',
-    },
-  },
-
-  {
-    id: 'event-community-coverage',
-    title: 'Event & Community Coverage',
-    backgroundTitle: 'EVENTS',
-    description:
-      'We provide professional coverage of conferences, community programs, launches, and public events using multi-camera setups and high-quality audio.',
-    image: '/img/portfolio/documentary-banner.png',
-    features: [
-      'Conferences & Launches',
-      'Community Programs',
-      'Multi-Camera Coverage',
-      'Professional Audio Capture',
-    ],
-    cta: {
-      label: 'View Event Coverage',
-      href: '/services/events',
     },
   },
 ] as const;

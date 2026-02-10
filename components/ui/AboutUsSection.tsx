@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Container from '@/components/layout/Container';
 import Section from '@/components/ui/Section';
 import { useInView } from '@/hooks/useInView';
@@ -13,9 +12,44 @@ export default function AboutUsSection() {
 
   return (
     <Section id="about" className="bg-cream py-24 md:py-32 relative overflow-hidden">
-      {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-brown/5 rounded-full blur-3xl" />
+      {/* Background image + overlays (match hero style) */}
+      <div className="absolute inset-0">
+        {/* Responsive background image */}
+        <div
+          className="absolute inset-0 bg-center bg-cover bg-no-repeat md:hidden"
+          style={{ backgroundImage: "url('/img/about/cantonefilms-aboutbg-sm.webp')" }}
+        />
+        <div
+          className="absolute inset-0 bg-center bg-cover bg-no-repeat hidden md:block"
+          style={{ backgroundImage: "url('/img/about/cantonefilms-aboutbg-lg.webp')" }}
+        />
+
+        {/* Cream overlay for readability */}
+        <div className="absolute inset-0 bg-cream/75" />
+
+        {/* Soft radial depth (non-linear) */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(circle at center, rgba(255, 248, 240, 0.15) 0%, rgba(255, 248, 240, 0.35) 60%, rgba(255, 248, 240, 0.5) 100%)',
+          }}
+        />
+
+        {/* Warm gold accent */}
+        <div className="absolute inset-0 bg-linear-to-br from-gold/10 via-transparent to-gold/5" />
+
+        {/* Subtle vignette */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(circle at center, transparent 0%, transparent 55%, rgba(5, 10, 48, 0.15) 100%)',
+          }}
+        />
+
+        
+      </div>
       
       <Container>
         {/* Header */}
@@ -53,36 +87,27 @@ export default function AboutUsSection() {
             contentInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          {/* Left – Image/Visual */}
-          <div className="relative">
-            {/* Main image */}
-            <div className="relative aspect-[4/5] bg-navy overflow-hidden group rounded-2xl shadow-lg">
-              <Image
-                src="/img/about/about-image.webp" 
-                alt="Cantone Films Team"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
-              
-            </div>
-          </div>
-
-          {/* Right – Content */}
-          <div className="space-y-8">
+          {/* Content (left column) */}
+          <div className="space-y-8 lg:max-w-xl">
             {/* Main narrative */}
             <div className="space-y-6 text-navy text-lg leading-relaxed font-normal">
               <p className="text-xl text-navy">
-                Cantone Films is a creative media production company providing professional film, video, and multimedia services across Tanzania and beyond.
+                Cantone Films provides professional film and media
+                  production services for NGOs, institutions,
+                  development organizations, and brands. We
+                  specialize in documentary filmmaking, impact
+                  storytelling, and strategic visual communication
+                  that supports reporting, advocacy, and
+                  engagement.
               </p>
 
-              <p>
+              {/* <p>
                 We work with organizations, institutions, and brands to document programs, share success stories, and communicate meaningful change through visual storytelling.
               </p>
 
               <p className="text-navy">
                 Every project we undertake is grounded in purpose-designed not just to look beautiful, but to inform, inspire, and leave a lasting impact on communities.
-              </p>
+              </p> */}
             </div>
 
             {/* Approach callout */}
@@ -97,19 +122,32 @@ export default function AboutUsSection() {
               </h3>
 
               <p className="text-cream leading-relaxed mb-4 font-normal">
-                We believe that powerful stories can educate, mobilize communities, and influence positive development outcomes.
+                Our approach combines strong research, cultural
+                sensitivity, and reliable production standards to
+                ensure every story is accurate, respectful, and
+                effective.
               </p>
 
-              <p className="text-cream leading-relaxed font-normal">
-                Our work is driven by cultural sensitivity, strong research, and cinematic craftsmanship, ensuring every story is told with authenticity, respect, and depth.
-              </p>
+              
 
               {/* Decorative line */}
               <div className="mt-6 h-px bg-gradient-to-r from-gold/50 to-transparent" />
             </div>
           </div>
+
+          {/* Right column spacer to keep content left on large screens */}
+          <div className="hidden lg:block" />
         </div>
       </Container>
+      <style jsx>{`
+        @keyframes shimmer {
+          0% { background-position: -200% 0; }
+          100% { background-position: 200% 0; }
+        }
+        .animate-shimmer {
+          animation: shimmer 8s infinite linear;
+        }
+      `}</style>
     </Section>
   );
 }

@@ -38,7 +38,7 @@ export default function ServiceCard({
       style={{ transitionDelay: `${index * 0.1}s` }}
     >
       {/* Main card container with soft rounded corners */}
-      <div className="relative h-full bg-cream/80 border border-brown/10 rounded-2xl p-8 md:p-10 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-gold/10 group-hover:-translate-y-2">
+      <div className="relative h-full bg-cream/80 border-2 border-gold/70 rounded-2xl p-8 md:p-10 transition-all duration-500 group-hover:border-gold group-hover:shadow-2xl group-hover:shadow-gold/10 group-hover:-translate-y-2">
         
         {/* Animated border glow */}
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/0 via-gold/0 to-gold/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

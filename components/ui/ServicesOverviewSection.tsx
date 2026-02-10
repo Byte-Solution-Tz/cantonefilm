@@ -7,16 +7,14 @@ import ServiceCard from '@/components/ui/ServiceCard';
 import { services } from '@/data/services';
 import type { ServiceId } from '@/data/services';
 import { useInView } from '@/hooks/useInView';
-import { Film, PenTool, Layers, Camera, Users, ArrowRight } from 'lucide-react';
+import { Film, PenTool, Layers, ArrowRight } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { openContactModal } from '@/components/modals/contactModalEvents';
 
 const serviceIcons: Record<ServiceId, LucideIcon> = {
-  'film-video-production': Film,
-  'story-creative-development': PenTool,
-  'post-production': Layers,
-  'photography-multimedia': Camera,
-  'event-community-coverage': Users,
+  'film-documentary-media-production': Film,
+  'story-development-visual-strategy': PenTool,
+  'post-production-content-delivery': Layers,
 };
 
 export default function ServicesOverviewSection() {

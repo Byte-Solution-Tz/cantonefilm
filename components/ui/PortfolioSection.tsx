@@ -49,11 +49,12 @@ export default function PortfolioSection() {
 
 
               <p className="text-base md:text-lg text-navy/80 leading-relaxed">
-                Our portfolio includes impact documentaries,
-                community-based storytelling, and corporate
-                communication projects that highlight social
-                progress, entrepreneurship, education, and public
-                health initiatives.
+                Our portfolio reflects our commitment to
+                documenting meaningful change. We work closely
+                with organizations and communities to capture real
+                stories from the field, translating development
+                programs, research initiatives, and social
+                interventions into accessible visual narratives.
               </p>
 
               {/* Stats */}

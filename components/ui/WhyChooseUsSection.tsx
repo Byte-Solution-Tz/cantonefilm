@@ -31,7 +31,7 @@ export default function WhyChooseUsSection() {
               <div className="absolute -bottom-6 -left-6 w-full h-full bg-gold z-0 rounded-2xl" />
               <div className="relative z-10 overflow-hidden rounded-2xl shadow-lg">
                 <Image
-                  src="/img/about/why-choose-us.webp"
+                  src="/img/about/whychooseus.webp"
                   alt="Cantone Films impact storytelling"
                   width={800}
                   height={520}
@@ -40,11 +40,6 @@ export default function WhyChooseUsSection() {
               </div>
             </div>
 
-            {/* UNDER IMAGE — Results Driven */}
-            <WhyItem
-                title="Development & NGO Experience"
-                text="We understand reporting requirements, donor communication needs, and impact documentation, enabling us to translate complex programs into compelling visual narratives."
-              />
           </div>
 
           {/* RIGHT COLUMN */}
@@ -65,53 +60,20 @@ export default function WhyChooseUsSection() {
 
             {/* Heading */}
             <h2 className="text-4xl md:text-5xl font-bold text-gold mb-6 leading-tight">
-              Why <br />
-              <span className="text-brown">Choose Cantone Films</span>
+              We understand you
             </h2>
 
-            {/* Intro sentence */}
-            <p className="text-navy/80 max-w-xl mb-10 leading-relaxed">
-              We work at the intersection of storytelling, development communication,
-              and community engagement, helping organizations communicate impact
-              clearly, ethically, and effectively.
+            {/* Description */}
+            <p className="text-navy/80 max-w-xl leading-relaxed text-base md:text-lg">
+              We understand the communication needs of NGOs and institutions, including reporting, advocacy, and
+              stakeholder engagement. Our productions are designed to meet professional standards while remaining
+              accessible to diverse audiences. By combining research-informed storytelling with high-quality
+              production, we help organizations communicate their work with clarity and credibility.
             </p>
-
-            {/* Right-side points */}
-            <div className="space-y-10 max-w-xl">
-              <WhyItem
-                title="Impact-Focused Storytelling"
-                text="We design stories that raise awareness, communicate measurable outcomes, and inspire positive action supporting advocacy, education, and development goals."
-              />
-
-              <WhyItem
-                title="Ethical Community Engagement"
-                text="Our work prioritizes informed consent, respectful representation, and cultural sensitivity, ensuring communities are portrayed with dignity and accuracy."
-              />
-
-              <WhyItem
-                title="Professional Production Standards"
-                text="We deliver broadcast-ready content with reliable timelines, clear communication, and high technical quality meeting institutional and donor expectations."
-              />
-
-              
-            </div>
           </div>
 
         </div>
       </Container>
     </section>
-  );
-}
-
-function WhyItem({ title, text }: { title: string; text: string }) {
-  return (
-    <div>
-      <h3 className="text-lg md:text-xl font-semibold text-gold mb-2">
-        {title}
-      </h3>
-      <p className="text-navy/80 leading-relaxed text-base md:text-lg">
-        {text}
-      </p>
-    </div>
   );
 }

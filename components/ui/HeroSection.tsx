@@ -28,10 +28,35 @@ export default function CantoneFilmsHero() {
       ref={heroRef}
       className="relative h-screen overflow-hidden bg-cream"
     >
-      {/* Decorative background layers (NO IMAGES) */}
+      {/* Background image + overlays */}
       <div className="absolute inset-0">
-        {/* Soft vertical depth */}
-        <div className="absolute inset-0 bg-linear-to-b from-cream via-cream to-brown/10" />
+        {/* Responsive background image */}
+        <div
+          className="absolute inset-0 bg-center bg-cover bg-no-repeat md:hidden"
+          style={{
+            backgroundImage:
+              "url('/img/hero/cantonefilms-bg-sm.webp')",
+          }}
+        />
+        <div
+          className="absolute inset-0 bg-center bg-cover bg-no-repeat hidden md:block"
+          style={{
+            backgroundImage:
+              "url('/img/hero/cantonefilms-bg-lg.webp')",
+          }}
+        />
+
+        {/* Cream overlay for readability */}
+        <div className="absolute inset-0 bg-cream/65" />
+
+        {/* Soft radial depth (non-linear) */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(circle at center, rgba(255, 248, 240, 0.15) 0%, rgba(255, 248, 240, 0.35) 60%, rgba(255, 248, 240, 0.5) 100%)',
+          }}
+        />
 
         {/* Warm gold accent */}
         <div className="absolute inset-0 bg-linear-to-br from-gold/10 via-transparent to-gold/5" />
@@ -43,12 +68,6 @@ export default function CantoneFilmsHero() {
             background:
               'radial-gradient(circle at center, transparent 0%, transparent 55%, rgba(5, 10, 48, 0.15) 100%)',
           }}
-        />
-
-        {/* Shimmer accent */}
-        <div
-          className="absolute inset-0 bg-gradient-to-r from-gold/10 via-transparent to-gold/10 opacity-30 animate-shimmer"
-          style={{ backgroundSize: '200% 100%' }}
         />
       </div>
 

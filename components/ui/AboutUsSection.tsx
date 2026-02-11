@@ -3,7 +3,6 @@
 import Container from '@/components/layout/Container';
 import Section from '@/components/ui/Section';
 import { useInView } from '@/hooks/useInView';
-import { Target } from 'lucide-react';
 
 
 export default function AboutUsSection() {
@@ -88,50 +87,36 @@ export default function AboutUsSection() {
           }`}
         >
           {/* Content (left column) */}
-          <div className="space-y-8 lg:max-w-xl">
-            {/* Main narrative */}
-            <div className="space-y-6 text-navy text-lg leading-relaxed font-normal">
+          <div className="relative lg:max-w-2xl">
+            <div className="absolute -left-6 -bottom-6 w-full h-full bg-gold/80 rounded-3xl" />
+            <div className="relative z-10 bg-cream/90 rounded-3xl p-8 md:p-10 lg:p-12 space-y-8 text-navy shadow-sm">
+              {/* Main narrative */}
+              <div className="space-y-6 text-lg leading-relaxed font-normal">
+                <p className="text-xl text-navy">
+                  Cantone Films provides professional film and media
+                    production services for NGOs, institutions,
+                    development organizations, and brands. We
+                    specialize in documentary filmmaking, impact
+                    storytelling, and strategic visual communication
+                    that supports reporting, advocacy, and
+                    engagement.
+                </p>
+
+                {/* <p>
+                  We work with organizations, institutions, and brands to document programs, share success stories, and communicate meaningful change through visual storytelling.
+                </p>
+
+                <p className="text-navy">
+                  Every project we undertake is grounded in purpose-designed not just to look beautiful, but to inform, inspire, and leave a lasting impact on communities.
+                </p> */}
+              </div>
+
               <p className="text-xl text-navy">
-                Cantone Films provides professional film and media
-                  production services for NGOs, institutions,
-                  development organizations, and brands. We
-                  specialize in documentary filmmaking, impact
-                  storytelling, and strategic visual communication
-                  that supports reporting, advocacy, and
-                  engagement.
-              </p>
-
-              {/* <p>
-                We work with organizations, institutions, and brands to document programs, share success stories, and communicate meaningful change through visual storytelling.
-              </p>
-
-              <p className="text-navy">
-                Every project we undertake is grounded in purpose-designed not just to look beautiful, but to inform, inspire, and leave a lasting impact on communities.
-              </p> */}
-            </div>
-
-            {/* Approach callout */}
-            <div className="relative bg-gradient-to-br from-brown to-gold p-8 rounded-2xl">
-              
-              
-              <h3 className="text-2xl font-bold mb-4 flex items-center gap-3 text-cream">
-                <div className="w-10 h-10 bg-gold/20 flex rounded-2xl items-center justify-center">
-                  <Target className="w-5 h-5 text-gold" />
-                </div>
-                Our Approach
-              </h3>
-
-              <p className="text-cream leading-relaxed mb-4 font-normal">
                 Our approach combines strong research, cultural
                 sensitivity, and reliable production standards to
                 ensure every story is accurate, respectful, and
                 effective.
               </p>
-
-              
-
-              {/* Decorative line */}
-              <div className="mt-6 h-px bg-gradient-to-r from-gold/50 to-transparent" />
             </div>
           </div>
 

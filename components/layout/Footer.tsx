@@ -57,16 +57,16 @@ export default function Footer() {
               </span> */}
             </Link>
 
-            <p className="text-cream/80 max-w-2xl leading-relaxed text-base">
+            <p className="text-cream/80 max-w-2xl leading-relaxed text-2xl md:text-3xl font-bold">
               {site.tagline}
             </p>
 
-            <div className="grid gap-4 text-sm">
+            <div className="grid gap-5 text-xl md:text-2xl font-bold">
               <a
                 href={`mailto:${site.email}`}
                 className="flex items-center gap-3 text-cream/80 hover:text-gold transition"
               >
-                <Mail className="w-4 h-4" />
+                <Mail className="w-5 h-5 md:w-6 md:h-6" />
                 {site.email}
               </a>
 
@@ -74,12 +74,12 @@ export default function Footer() {
                 href={`tel:${site.phone}`}
                 className="flex items-center gap-3 text-cream/80 hover:text-gold transition"
               >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-5 h-5 md:w-6 md:h-6" />
                 {site.phone}
               </a>
 
               <div className="flex items-center gap-3 text-cream/70">
-                <MapPin className="w-4 h-4" />
+                <MapPin className="w-5 h-5 md:w-6 md:h-6" />
                 Dar es Salaam, Tanzania
               </div>
             </div>
@@ -92,9 +92,9 @@ export default function Footer() {
                   href={href}
                   target="_blank"
                   aria-label={label}
-                  className="w-10 h-10 flex items-center justify-center border border-cream/20 hover:border-gold hover:text-gold transition"
-                >
-                  <Icon className="w-5 h-5" />
+                className="w-14 h-14 flex items-center justify-center border border-cream/20 hover:border-gold hover:text-gold transition"
+              >
+                  <Icon className="w-7 h-7" />
                 </Link>
               ))}
             </div>
@@ -109,14 +109,14 @@ export default function Footer() {
             }} />
             <div className="relative z-10 space-y-6">
               <div>
-                <p className="text-cream text-xs tracking-widest uppercase font-semibold mb-3">
+                <p className="text-cream text-base md:text-lg tracking-widest uppercase font-semibold mb-3">
                   Ready to collaborate
                 </p>
-                <h3 className="text-2xl md:text-3xl font-bold text-cream leading-tight">
+                <h3 className="text-4xl md:text-5xl font-bold text-cream leading-tight">
                   Let&apos;s shape a story that lasts.
                 </h3>
               </div>
-              <p className="text-cream/80 text-sm leading-relaxed">
+              <p className="text-cream/80 text-lg md:text-xl leading-relaxed font-semibold">
                 Share your goals and we&apos;ll recommend the best approach for
                 your project and audience.
               </p>
@@ -148,7 +148,7 @@ export default function Footer() {
         <div className="my-14 h-px bg-cream/20" />
 
         {/* Bottom bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-cream/60">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-lg md:text-xl text-cream/60 font-semibold">
           <span>
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </span>

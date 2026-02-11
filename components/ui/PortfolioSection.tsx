@@ -93,7 +93,7 @@ export default function PortfolioSection() {
                       will-change-transform
                       transition-all duration-700 ease-out
                       ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
-                      ${isLarge ? 'md:col-span-2 aspect-[16/9]' : 'aspect-[4/5]'}
+                      ${isLarge ? 'md:col-span-2 aspect-[16/9]' : 'aspect-[4/5]'} 
                     `}
                     style={{ transitionDelay: `${index * 80}ms` }}
                   >
